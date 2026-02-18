@@ -1,0 +1,33 @@
+﻿[2026-02-18 09:18:20] collect telemetry
+[2026-02-18 09:18:49] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260218_091849.json
+[2026-02-18 09:18:49] heuristic analysis
+[2026-02-18 09:20:39] heuristic analysis
+[2026-02-18 09:21:18] nothing to fix
+[2026-02-18 09:21:54] heuristic analysis
+[2026-02-18 09:22:33] nothing to fix
+[2026-02-18 09:22:47] defender quick scan via MpCmdRun
+[2026-02-18 09:25:14] heuristic analysis
+[2026-02-18 10:15:36] collect telemetry
+[2026-02-18 10:16:06] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260218_101606.json
+[2026-02-18 10:16:06] heuristic analysis
+[2026-02-18 10:26:21] winget updating allowed packages
+[2026-02-18 10:26:22] defender update failed: Сбой загрузки поставщика 
+[2026-02-18 10:26:40] user requested rollback (launching rstrui)
+[2026-02-18 10:26:54] heuristic analysis
+[2026-02-18 10:27:33] nothing to fix
+[2026-02-18 10:28:02] heuristic analysis
+[2026-02-18 10:29:29] collect telemetry
+[2026-02-18 10:29:55] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260218_102955.json
+[2026-02-18 10:29:55] heuristic analysis
+[2026-02-18 10:55:10] collect telemetry
+[2026-02-18 10:55:42] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260218_105542.json
+[2026-02-18 10:55:42] heuristic analysis
+[2026-02-18 10:57:38] user requested rollback (launching rstrui)
+[2026-02-18 10:58:00] heuristic analysis
+[2026-02-18 10:58:41] nothing to fix
+[2026-02-18 11:14:16] heuristic analysis
+[2026-02-18 11:14:56] nothing to fix
+[2026-02-18 11:51:03] collect telemetry
+[2026-02-18 11:51:38] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260218_115138.json
+[2026-02-18 11:51:38] heuristic analysis
+[2026-02-18 12:01:03] user requested rollback (launching rstrui)

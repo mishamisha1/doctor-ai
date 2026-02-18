@@ -1,0 +1,8 @@
+﻿[2026-02-13 08:13:36] collect telemetry
+[2026-02-13 08:13:58] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260213_081358.json
+[2026-02-13 08:13:58] heuristic analysis
+[2026-02-13 08:51:32] collect telemetry
+[2026-02-13 08:51:50] telemetry saved: C:\GoProject\src\doctor-ai\logs\scan_20260213_085150.json
+[2026-02-13 08:51:50] heuristic analysis
+[2026-02-13 12:36:57] winget updating allowed packages
+[2026-02-13 12:36:59] defender update failed: Сбой загрузки поставщика 

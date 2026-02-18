@@ -1,0 +1,4 @@
+﻿Scan starting...
+ScanType 1 started. MpCmdRun-ProcessId=25800, IsScheduledScan=0, MpCmdRun-RequestGuid:00000000-0000-0000-0000-000000000000
+Scan wait completed. ScanType:1, MpCmdRun-ProcessId=25800, IsScheduledScan=0, MpCmdRun-RequestGuid:00000000-0000-0000-0000-000000000000, hr=0
+Scan finished.

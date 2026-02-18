@@ -1,0 +1,2296 @@
+﻿{
+    "Hostname":  "DESKTOP-T7QD53R",
+    "Time":  "2026-02-18T09:18:49",
+    "Processes":  [
+                      {
+                          "Name":  "System Idle Process",
+                          "PID":  0,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "System",
+                          "PID":  4,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Secure System",
+                          "PID":  236,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Registry",
+                          "PID":  280,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "smss.exe",
+                          "PID":  856,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "csrss.exe",
+                          "PID":  1220,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "wininit.exe",
+                          "PID":  1404,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "services.exe",
+                          "PID":  1528,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "LsaIso.exe",
+                          "PID":  1560,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "lsass.exe",
+                          "PID":  1580,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  1720,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "fontdrvhost.exe",
+                          "PID":  1760,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  1852,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  1892,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2032,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2044,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  1840,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2108,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2116,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2168,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2228,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2272,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2284,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2316,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2360,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2408,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2656,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2664,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2772,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2568,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3088,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "amdfendrsr.exe",
+                          "PID":  3096,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "atiesrxx.exe",
+                          "PID":  3104,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3112,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3612,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3620,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3624,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Memory Compression",
+                          "PID":  3748,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3784,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3812,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3820,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3904,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3936,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4060,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3860,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3864,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4184,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4404,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4412,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4464,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4524,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "scheduler.exe",
+                          "PID":  4596,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4804,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4848,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4944,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "spoolsv.exe",
+                          "PID":  5104,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4580,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4724,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AmdPpkgSvc.exe",
+                          "PID":  5256,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5264,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5272,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5284,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5292,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SMSvcHost.exe",
+                          "PID":  5312,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SUService.exe",
+                          "PID":  5304,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SU_OSD_KILL.exe",
+                          "PID":  5328,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RtkBtManServ.exe",
+                          "PID":  5336,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5344,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5352,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  5360,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "MSOfficePLUSService.exe",
+                          "PID":  5368,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "MsMpEng.exe",
+                          "PID":  5388,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "mqsvc.exe",
+                          "PID":  5624,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  6032,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  6088,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Sysmon64.exe",
+                          "PID":  6240,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SMSvcHost.exe",
+                          "PID":  6932,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "unsecapp.exe",
+                          "PID":  7116,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7636,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7620,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "MSPCManagerService.exe",
+                          "PID":  7864,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7928,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "FCDBLog.exe",
+                          "PID":  7796,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AggregatorHost.exe",
+                          "PID":  8032,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  8216,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  8500,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "WmiPrvSE.exe",
+                          "PID":  8576,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "FortiSSLVPNdaemon.exe",
+                          "PID":  8640,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "FortiSettings.exe",
+                          "PID":  8648,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "FortiVPN.exe",
+                          "PID":  8688,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "NisSrv.exe",
+                          "PID":  9380,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  9436,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  8764,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7384,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2196,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  4148,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  9820,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "winlogbeat.exe",
+                          "PID":  8136,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  6980,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  9636,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7604,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  3660,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SecurityHealthService.exe",
+                          "PID":  2636,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2252,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7628,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  13256,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  17904,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7112,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  2704,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  12736,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  18852,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  9644,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  27044,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  16532,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "FileSyncHelper.exe",
+                          "PID":  19000,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "OfficeClickToRun.exe",
+                          "PID":  27924,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "audiodg.exe",
+                          "PID":  21140,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "csrss.exe",
+                          "PID":  15840,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "winlogon.exe",
+                          "PID":  15024,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "fontdrvhost.exe",
+                          "PID":  20488,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "dwm.exe",
+                          "PID":  7968,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "atieclxx.exe",
+                          "PID":  20188,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SUAdminFunction.exe",
+                          "PID":  26120,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  11156,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "sihost.exe",
+                          "PID":  13560,
+                          "Path":  "C:\\WINDOWS\\system32\\sihost.exe",
+                          "CommandLine":  "sihost.exe",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  25240,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup -s CDPUserSvc",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  26780,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  26588,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup -s WpnUserService",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "taskhostw.exe",
+                          "PID":  16024,
+                          "Path":  "C:\\WINDOWS\\system32\\taskhostw.exe",
+                          "CommandLine":  "taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  24120,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "explorer.exe",
+                          "PID":  4116,
+                          "Path":  "C:\\WINDOWS\\Explorer.EXE",
+                          "CommandLine":  "C:\\WINDOWS\\Explorer.EXE",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "FortiTray.exe",
+                          "PID":  27976,
+                          "Path":  "C:\\Program Files\\Fortinet\\FortiClient\\FortiTray.exe",
+                          "CommandLine":  "-s FC_{73EFB30F-1CAD-4a7a-AE2E-150282B6CE25}_000008 ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "taskhostw.exe",
+                          "PID":  23920,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  21876,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SearchHost.exe",
+                          "PID":  27756,
+                          "Path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe",
+                          "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe\" -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "StartMenuExperienceHost.exe",
+                          "PID":  24136,
+                          "Path":  "C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe",
+                          "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe\" -ServerName:FullTrustApp.AppXykjsye98af63ez2annt9djke8trg8stn.mca",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Widgets.exe",
+                          "PID":  18088,
+                          "Path":  "C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.1202.40.0_x64__cw5n1h2txyewy\\Dashboard\\Widgets.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.1202.40.0_x64__cw5n1h2txyewy\\Dashboard\\Widgets.exe\" -ServerName:Microsoft.Windows.DashboardServer",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  28820,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UdkSvcGroup -s UdkUserSvc",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  21472,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "WidgetService.exe",
+                          "PID":  22656,
+                          "Path":  "C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.14.0_x64__8wekyb3d8bbwe\\WidgetService\\WidgetService.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.14.0_x64__8wekyb3d8bbwe\\WidgetService\\WidgetService.exe\" -RegisterProcessAsComServer -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "mullvad-daemon.exe",
+                          "PID":  19780,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  15156,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2125.34901.0.0 --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.7840) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 144.0.3719.115)\" --lang=ru --mojo-named-platform-channel-pipe=27756.8348.3066745659158332865 /pfhostedapp:fcfdddf7d8a3b04b35ec2bb3b94dccc0599882ae",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  28228,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView /prefetch:4 /pfhostedapp:fcfdddf7d8a3b04b35ec2bb3b94dccc0599882ae --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=144.0.7559.133 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --annotation=plat=Win64 \"--annotation=prod=Edge WebView2\" --annotation=ver=144.0.3719.115 --initial-client-data=0x17c,0x180,0x184,0x154,0x18c,0x7ffc9fa12c98,0x7ffc9fa12ca4,0x7ffc9fa12cb0",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ctfmon.exe",
+                          "PID":  10960,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "LockApp.exe",
+                          "PID":  13636,
+                          "Path":  "C:\\WINDOWS\\SystemApps\\Microsoft.LockApp_cw5n1h2txyewy\\LockApp.exe",
+                          "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\Microsoft.LockApp_cw5n1h2txyewy\\LockApp.exe\" -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  15972,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  7304,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s NPSMSvc",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  16380,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=gpu-process --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.7840) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 144.0.3719.115)\" --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2125.34901.0.0 --embedded-browser-webview=1 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --always-read-main-dll --metrics-shmem-handle=1756,i,14157448540232641779,13451418730796097472,262144 --field-trial-handle=1880,i,11804279563188903156,1297584544843287803,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1876 /prefetch:2 /pfhostedapp:fcfdddf7d8a3b04b35ec2bb3b94dccc0599882ae",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  6124,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.7840) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 144.0.3719.115)\" --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2125.34901.0.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2080,i,16392419184094506033,15546583488187198580,524288 --field-trial-handle=1880,i,11804279563188903156,1297584544843287803,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2084 /prefetch:11 /pfhostedapp:fcfdddf7d8a3b04b35ec2bb3b94dccc0599882ae",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  10544,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=service --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.7840) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 144.0.3719.115)\" --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2125.34901.0.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2428,i,6701363171987766235,3634093181718190376,524288 --field-trial-handle=1880,i,11804279563188903156,1297584544843287803,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2452 /prefetch:13 /pfhostedapp:fcfdddf7d8a3b04b35ec2bb3b94dccc0599882ae",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  24844,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=renderer --noerrdialogs --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.7840) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 144.0.3719.115)\" --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --webview-exe-name=SearchHost.exe --webview-exe-version=2125.34901.0.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --js-flags=\"--expose-gc --ms-user-locale=ru_KZ\" --time-ticks-at-unix-epoch=-1771044778294667 --launch-time-ticks=255586552353 --always-read-main-dll --metrics-shmem-handle=3828,i,12472445433389599416,11621761884203828235,2097152 --field-trial-handle=1880,i,11804279563188903156,1297584544843287803,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3840 /pfhostedapp:fcfdddf7d8a3b04b35ec2bb3b94dccc0599882ae /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SecurityHealthSystray.exe",
+                          "PID":  28576,
+                          "Path":  "C:\\Windows\\System32\\SecurityHealthSystray.exe",
+                          "CommandLine":  "\"C:\\Windows\\System32\\SecurityHealthSystray.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "OneDrive.exe",
+                          "PID":  19012,
+                          "Path":  "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe",
+                          "CommandLine":  "\"C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe\" /background",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steam.exe",
+                          "PID":  14084,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\steam.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "TextInputHost.exe",
+                          "PID":  11968,
+                          "Path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe",
+                          "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe\" -ServerName:InputApp.AppXk0k6mrh4r2q0ct33a9wgbez0x7v9cz5y.mca",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  11644,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" -nocrashdialog \"-lang=ru_RU\" \"-cachedir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" \"-steampid=14084\" \"-buildid=1769025840\" \"-steamid=0\" \"-logdir=C:\\Program Files (x86)\\Steam\\logs\" \"-uimode=7\" \"-startcount=0\" \"-steamuniverse=Public\" \"-realm=Global\" \"-clientui=C:\\Program Files (x86)\\Steam\\clientui\" \"-steampath=C:\\Program Files (x86)\\Steam\\steam.exe\" \"-launcher=0\" \"--valve-initial-threadpool-size=4\" --valve-enable-site-isolation --enable-smooth-scrolling \"--log-file=C:\\Program Files (x86)\\Steam\\logs\\cef_log.txt\" --disable-quick-menu --disable-component-update \"--gaia-url=http://disabled.invalid\" \"--enable-features=PlatformHEVCDecoderSupport\" \"--disable-features=WinRetrieveSuggestionsOnlyOnDemand,SpareRendererForSitePerProcess,DcheckIsFatal,BlockPromptsIfIgnoredOften,ValveFFmpegAllowLowDelayHEVC\"",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamservice.exe",
+                          "PID":  27212,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  9324,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=crashpad-handler /prefetch:4 --max-uploads=5 --max-db-size=20 --max-db-age=5 --monitor-self-annotation=ptype=crashpad-handler \"--database=C:\\Program Files (x86)\\Steam\\dumps\" \"--metrics-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\CEF\\User Data\" --url=https://crash.steampowered.com/submit --annotation=platform=win64 --annotation=product=cefwebhelper --annotation=version=1769025840 --initial-client-data=0x2c8,0x2cc,0x2d0,0x2c4,0x2d4,0x7ffc573daf00,0x7ffc573daf0c,0x7ffc573daf18",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  1804,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=gpu-process --start-stack-profiler --enable-chrome-runtime --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1769025840 --steamid=0 --valve-initial-threadpool-size=4 --gpu-preferences=WAAAAAAAAADgAAAMAAAAAAAAAAAAAAAAAABgAAEAAAA4AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --field-trial-handle=1768,i,10251588549226538638,2425214188557438794,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=1760 --mojo-platform-channel-handle=1288 /prefetch:2",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  21832,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --start-stack-profiler --enable-chrome-runtime --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1769025840 --steamid=0 --valve-initial-threadpool-size=4 --field-trial-handle=2108,i,10251588549226538638,2425214188557438794,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=2128 --mojo-platform-channel-handle=2124 /prefetch:11",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  20152,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=service --enable-chrome-runtime --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1769025840 --steamid=0 --valve-initial-threadpool-size=4 --field-trial-handle=2236,i,10251588549226538638,2425214188557438794,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=2248 --mojo-platform-channel-handle=2244 /prefetch:13",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  12504,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=renderer --enable-dinosaur-easter-egg-alt-images --enable-chrome-runtime --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1769025840 --steamid=0 --valve-initial-threadpool-size=4 --gaia-url=http://disabled.invalid --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1771044778290018 --launch-time-ticks=255595657809 --field-trial-handle=3980,i,10251588549226538638,2425214188557438794,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=4004 --mojo-platform-channel-handle=3976 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ShellExperienceHost.exe",
+                          "PID":  4352,
+                          "Path":  "C:\\WINDOWS\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe",
+                          "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe\" -ServerName:App.AppXtk181tbxbce2qsex02s8tw7hfxa9xb3t.mca",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  18972,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ms-teams.exe",
+                          "PID":  1824,
+                          "Path":  "C:\\Program Files\\WindowsApps\\MSTeams_26015.1706.4351.4392_x64__8wekyb3d8bbwe\\ms-teams.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  7380,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  1048,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-name=ms-teams.exe --webview-exe-version=26015.1706.4351.4392 --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\" --noerrdialogs --embedded-browser-webview-dpi-awareness=2 --autoplay-policy=no-user-gesture-required --disable-background-timer-throttling --disable-features=msEnhancedTrackingPreventionEnabled,BreakoutBoxPreferCaptureTimestampInVideoFrames,BlockCrossPartitionBlobUrlFetching,V8Maglev,msWebOOUI --enable-blink-features=IndexedDbGetAllRecords --enable-features=msSingleSignOnOSForPrimaryAccountIsShared,SharedArrayBuffer,AutofillReplaceCachedWebElementsByRendererIds,msWebView2TerminateServiceWorkerWhenIdleIgnoringCdpSessions,msWebView2SetUserAgentOverrideOnIframes,PreferredAudioOutputDevices,DocumentPolicyIncludeJSCallStacksInCrashReports,RendererHangWatcher:delay/13s,UnresponsiveMultipleStackCollection:delay/0.1s/count/5,PartitionedCookies,ThirdPartyStoragePartitioning,msWebView2TextureStream,msWebView2EnableDraggableRegions,msAbydos,msAbydosHandwritingAttr,msAbydosGestureSupport --enable-precise-memory-info --gpu-watchdog-timeout-seconds=60 --isolate-origins=https://[*.]microsoft.com,https://[*.]sharepoint.com,https://[*.]sharepointonline.com,https://mesh-hearts-teams.azurewebsites.net,https://[*.]meshxp.net,https://res-sdf.cdn.office.net,https://res.cdn.office.net,https://copilot.teams.cloud.microsoft,https://local.copilot.teams.office.com --js-flags=\"--scavenger_max_new_space_capacity_mb=32 --stack-trace-limit=50\" --lang=ru-RU --mojo-named-platform-channel-pipe=1824.15124.8634922807078193157 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  17832,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView /prefetch:4 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=144.0.7559.133 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --annotation=plat=Win64 \"--annotation=prod=Edge WebView2\" --annotation=ver=144.0.3719.115 --initial-client-data=0x174,0x178,0x17c,0x150,0x184,0x7ffc9fa12c98,0x7ffc9fa12ca4,0x7ffc9fa12cb0",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  22968,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=gpu-process --gpu-watchdog-timeout-seconds=60 --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\" --webview-exe-name=ms-teams.exe --webview-exe-version=26015.1706.4351.4392 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --startup-read-main-dll --metrics-shmem-handle=1668,i,9397081224469323674,4254514451321004509,262144 --field-trial-handle=1796,i,16068499110439456187,6878688939955009542,262144 --enable-features=AutofillReplaceCachedWebElementsByRendererIds,DocumentPolicyIncludeJSCallStacksInCrashReports,PartitionedCookies,PreferredAudioOutputDevices,SharedArrayBuffer,ThirdPartyStoragePartitioning,msAbydos,msAbydosGestureSupport,msAbydosHandwritingAttr,msSingleSignOnOSForPrimaryAccountIsShared,msWebView2EnableDraggableRegions,msWebView2SetUserAgentOverrideOnIframes,msWebView2TerminateServiceWorkerWhenIdleIgnoringCdpSessions,msWebView2TextureStream --disable-features=BlockCrossPartitionBlobUrlFetching,BreakoutBoxPreferCaptureTimestampInVideoFrames,V8Maglev,msEnhancedTrackingPreventionEnabled,msWebOOUI --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1788 /prefetch:2 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  7372,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\" --webview-exe-name=ms-teams.exe --webview-exe-version=26015.1706.4351.4392 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --startup-read-main-dll --metrics-shmem-handle=2120,i,1581815568844447274,3098131950070897962,524288 --field-trial-handle=1796,i,16068499110439456187,6878688939955009542,262144 --enable-features=AutofillReplaceCachedWebElementsByRendererIds,DocumentPolicyIncludeJSCallStacksInCrashReports,PartitionedCookies,PreferredAudioOutputDevices,SharedArrayBuffer,ThirdPartyStoragePartitioning,msAbydos,msAbydosGestureSupport,msAbydosHandwritingAttr,msSingleSignOnOSForPrimaryAccountIsShared,msWebView2EnableDraggableRegions,msWebView2SetUserAgentOverrideOnIframes,msWebView2TerminateServiceWorkerWhenIdleIgnoringCdpSessions,msWebView2TextureStream --disable-features=BlockCrossPartitionBlobUrlFetching,BreakoutBoxPreferCaptureTimestampInVideoFrames,V8Maglev,msEnhancedTrackingPreventionEnabled,msWebOOUI --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2128 /prefetch:11 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  27472,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=service --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\" --webview-exe-name=ms-teams.exe --webview-exe-version=26015.1706.4351.4392 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --startup-read-main-dll --metrics-shmem-handle=2348,i,11290199292194183151,7585437718629568722,524288 --field-trial-handle=1796,i,16068499110439456187,6878688939955009542,262144 --enable-features=AutofillReplaceCachedWebElementsByRendererIds,DocumentPolicyIncludeJSCallStacksInCrashReports,PartitionedCookies,PreferredAudioOutputDevices,SharedArrayBuffer,ThirdPartyStoragePartitioning,msAbydos,msAbydosGestureSupport,msAbydosHandwritingAttr,msSingleSignOnOSForPrimaryAccountIsShared,msWebView2EnableDraggableRegions,msWebView2SetUserAgentOverrideOnIframes,msWebView2TerminateServiceWorkerWhenIdleIgnoringCdpSessions,msWebView2TextureStream --disable-features=BlockCrossPartitionBlobUrlFetching,BreakoutBoxPreferCaptureTimestampInVideoFrames,V8Maglev,msEnhancedTrackingPreventionEnabled,msWebOOUI --variations-seed-version --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2368 /prefetch:13 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  12152,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=renderer --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\" --webview-exe-name=ms-teams.exe --webview-exe-version=26015.1706.4351.4392 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --autoplay-policy=no-user-gesture-required --disable-background-timer-throttling --enable-precise-memory-info --enable-blink-features=IndexedDbGetAllRecords --video-capture-use-gpu-memory-buffer --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --js-flags=\"--scavenger_max_new_space_capacity_mb=32 --stack-trace-limit=50 --expose-gc --ms-user-locale=ru-KZ\" --time-ticks-at-unix-epoch=-1771044778294667 --launch-time-ticks=255600663196 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=3988,i,1610336649000004123,5018424527999725119,2097152 --field-trial-handle=1796,i,16068499110439456187,6878688939955009542,262144 --enable-features=AutofillReplaceCachedWebElementsByRendererIds,DocumentPolicyIncludeJSCallStacksInCrashReports,PartitionedCookies,PreferredAudioOutputDevices,SharedArrayBuffer,ThirdPartyStoragePartitioning,msAbydos,msAbydosGestureSupport,msAbydosHandwritingAttr,msSingleSignOnOSForPrimaryAccountIsShared,msWebView2EnableDraggableRegions,msWebView2SetUserAgentOverrideOnIframes,msWebView2TerminateServiceWorkerWhenIdleIgnoringCdpSessions,msWebView2TextureStream --disable-features=BlockCrossPartitionBlobUrlFetching,BreakoutBoxPreferCaptureTimestampInVideoFrames,V8Maglev,msEnhancedTrackingPreventionEnabled,msWebOOUI --variations-seed-version --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3972 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Discord.exe",
+                          "PID":  18216,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  24808,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=renderer --enable-dinosaur-easter-egg-alt-images --start-stack-profiler --enable-chrome-runtime --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1769025840 --steamid=0 --valve-initial-threadpool-size=4 --gaia-url=http://disabled.invalid --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=8 --time-ticks-at-unix-epoch=-1771044778290018 --launch-time-ticks=255605007764 --field-trial-handle=5656,i,10251588549226538638,2425214188557438794,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=5444 --mojo-platform-channel-handle=5672 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Discord.exe",
+                          "PID":  11916,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe",
+                          "CommandLine":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Roaming\\discord /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Roaming\\discord\\Crashpad --url=https://f.a.k/e --annotation=_productName=discord --annotation=_version=1.0.9224 --annotation=plat=Win64 --annotation=prod=Electron --annotation=ver=37.6.0 --initial-client-data=0x4e8,0x4ec,0x4f0,0x4dc,0x4f4,0x7ff7c828b074,0x7ff7c828b080,0x7ff7c828b090",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Discord.exe",
+                          "PID":  22320,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe\" --type=gpu-process --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\discord\" --gpu-preferences=UAAAAAAAAADgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --field-trial-handle=1768,i,15532570302504301117,4635930479126477020,262144 --enable-features=EnableTransparentHwndEnlargement --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinDelaySpellcheckServiceInit,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --mojo-platform-channel-handle=1760 /prefetch:2",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Discord.exe",
+                          "PID":  23296,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\discord\" --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --field-trial-handle=1768,i,15532570302504301117,4635930479126477020,262144 --enable-features=EnableTransparentHwndEnlargement --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinDelaySpellcheckServiceInit,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --mojo-platform-channel-handle=2044 /prefetch:11",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Discord.exe",
+                          "PID":  11308,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe\" --type=renderer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\discord\" --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --app-user-model-id=com.squirrel.Discord.Discord --app-path=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\resources\\app.asar\" --no-sandbox --no-zygote --enable-blink-features=EnumerateDevices,AudioOutputDevices --autoplay-policy=no-user-gesture-required --disable-background-timer-throttling --video-capture-use-gpu-memory-buffer --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1771044778294666 --launch-time-ticks=255607680419 --field-trial-handle=1768,i,15532570302504301117,4635930479126477020,262144 --enable-features=EnableTransparentHwndEnlargement --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinDelaySpellcheckServiceInit,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --mojo-platform-channel-handle=3960 --enable-node-leakage-in-renderers /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Discord.exe",
+                          "PID":  13800,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\app-1.0.9224\\Discord.exe\" --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ru --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\discord\" --standard-schemes=disclip --secure-schemes=disclip,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=disclip,sentry-ipc --streaming-schemes=disclip --field-trial-handle=1768,i,15532570302504301117,4635930479126477020,262144 --enable-features=EnableTransparentHwndEnlargement --disable-features=AllowAggressiveThrottlingWithWebSocket,HardwareMediaKeyHandling,IntensiveWakeUpThrottling,MediaSessionService,ScreenAIOCREnabled,SpareRendererForSitePerProcess,UseEcoQoSForBackgroundProcess,WinDelaySpellcheckServiceInit,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --mojo-platform-channel-handle=3264 /prefetch:12",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AMDRSServ.exe",
+                          "PID":  18072,
+                          "Path":  "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.24.20021.0_x64__0a9344xs7nr4m\\radeonsoftware\\AMDRSServ.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.24.20021.0_x64__0a9344xs7nr4m\\radeonsoftware\\AMDRSServ.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "amdow.exe",
+                          "PID":  14076,
+                          "Path":  "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.24.20021.0_x64__0a9344xs7nr4m\\radeonsoftware\\amdow.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.24.20021.0_x64__0a9344xs7nr4m\\radeonsoftware\\amdow.exe\" 18072",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AMDRSSrcExt.exe",
+                          "PID":  12748,
+                          "Path":  "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.24.20021.0_x64__0a9344xs7nr4m\\radeonsoftware\\AMDRSSrcExt.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.24.20021.0_x64__0a9344xs7nr4m\\radeonsoftware\\AMDRSSrcExt.exe\" fb28e830-7c29-4591-b2df-4e16275fa0d9 SOFTWARE\\AMD\\DVR\\Overlays",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "DiscordSystemHelper.exe",
+                          "PID":  19016,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "DiscordSystemHelper.exe",
+                          "PID":  16624,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "WhatsApp.Root.exe",
+                          "PID":  13904,
+                          "Path":  "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2587.10.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2587.10.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  14244,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  26640,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView\" --noerrdialogs --edge-webview-disable-crash-reporting=1 --embedded-browser-webview-enable-extension --edge-webview-is-background --mojo-named-platform-channel-pipe=13904.23976.757192597033342754 /pfhostedapp:9f7262ebd46655fd4eb776d6f6dee97cdc5a980c",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  25040,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView /prefetch:4 /pfhostedapp:9f7262ebd46655fd4eb776d6f6dee97cdc5a980c --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=144.0.7559.133 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --annotation=plat=Win64 \"--annotation=prod=Edge WebView2\" --annotation=ver=144.0.3719.115 --initial-client-data=0x184,0x188,0x18c,0x160,0x194,0x7ffc9fa12c98,0x7ffc9fa12ca4,0x7ffc9fa12cb0",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  18472,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=gpu-process --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView\" --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --startup-read-main-dll --metrics-shmem-handle=1544,i,11935786193422038707,6313294753382214382,262144 --field-trial-handle=1808,i,15025137571959235803,2573679620163823982,262144 --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1792 /prefetch:2 /pfhostedapp:9f7262ebd46655fd4eb776d6f6dee97cdc5a980c",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  17776,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView\" --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --startup-read-main-dll --metrics-shmem-handle=2112,i,2704901237732981237,7892040413037634163,524288 --field-trial-handle=1808,i,15025137571959235803,2573679620163823982,262144 --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2116 /prefetch:11 /pfhostedapp:9f7262ebd46655fd4eb776d6f6dee97cdc5a980c",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  9468,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=service --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView\" --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --startup-read-main-dll --metrics-shmem-handle=2376,i,13059121206809388819,1410108927135476360,524288 --field-trial-handle=1808,i,15025137571959235803,2573679620163823982,262144 --variations-seed-version --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2396 /prefetch:13 /pfhostedapp:9f7262ebd46655fd4eb776d6f6dee97cdc5a980c",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  18724,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=renderer --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView\" --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=8 --js-flags=\"--expose-gc --ms-user-locale=ru_KZ\" --time-ticks-at-unix-epoch=-1771044778294666 --launch-time-ticks=255618937783 --skip-read-main-dll --metrics-shmem-handle=5496,i,8592832791634214097,3999816437813124460,2097152 --field-trial-handle=1808,i,15025137571959235803,2573679620163823982,262144 --variations-seed-version --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=5508 /pfhostedapp:9f7262ebd46655fd4eb776d6f6dee97cdc5a980c /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ChatGPT.exe",
+                          "PID":  25248,
+                          "Path":  "C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ChatGPT.exe",
+                          "PID":  11792,
+                          "Path":  "C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\OpenAI.ChatGPT-Desktop_2p2nqsd0c76g0\\LocalCache\\Roaming\\ChatGPT /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\OpenAI.ChatGPT-Desktop_2p2nqsd0c76g0\\LocalCache\\Roaming\\ChatGPT\\Crashpad --url=https://o33249.ingest.us.sentry.io/api/4507771614265344/minidump/?sentry_key=95e16831cb6713fbf64816ec78a777ef --annotation=_productName=ChatGPT --annotation=_version=1.2026.43 --annotation=plat=Win64 --annotation=prod=Electron \"--annotation=sentry___initialScope={\\\"release\\\":\\\"ChatGPT@1.2026.43\\\",\\\"environment\\\":\\\"production\\\",\\\"tags\\\":{\\\"app_session_id\\\":\\\"a7cebd1b-b35e-4516-9b8e-de4b919df973\\\",\\\"environment\\\":\\\"production\\\",\\\"arch\\\":\\\"x86_64\\\",\\\"is_quitting\\\":\\\"false\\\"}}\" --annotation=ver=39.2.7 --initial-client-data=0x6fc,0x700,0x704,0x6f4,0x708,0x7ff727e316ec,0x7ff727e316f8,0x7ff727e31708",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ChatGPT.exe",
+                          "PID":  26068,
+                          "Path":  "C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe\" --type=gpu-process --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\OpenAI.ChatGPT-Desktop_2p2nqsd0c76g0\\LocalCache\\Roaming\\ChatGPT\" --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --field-trial-handle=2296,i,9573641409303947180,6221808480265401136,262144 --enable-features=EnableTransparentHwndEnlargement,FluentScrollbar,PdfUseShowSaveFilePicker --disable-features=LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=2284 /prefetch:2",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ChatGPT.exe",
+                          "PID":  5968,
+                          "Path":  "C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\OpenAI.ChatGPT-Desktop_2p2nqsd0c76g0\\LocalCache\\Roaming\\ChatGPT\" --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=sentry-ipc --field-trial-handle=2296,i,9573641409303947180,6221808480265401136,262144 --enable-features=EnableTransparentHwndEnlargement,FluentScrollbar,PdfUseShowSaveFilePicker --disable-features=LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2388 /prefetch:11",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ChatGPT.exe",
+                          "PID":  27748,
+                          "Path":  "C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe\" --type=renderer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\OpenAI.ChatGPT-Desktop_2p2nqsd0c76g0\\LocalCache\\Roaming\\ChatGPT\" --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=sentry-ipc --app-path=\"C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2026.43.0_x64__2p2nqsd0c76g0\\app\\resources\\app.asar\" --enable-sandbox --video-capture-use-gpu-memory-buffer --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1771044778294666 --launch-time-ticks=255625580644 --field-trial-handle=2296,i,9573641409303947180,6221808480265401136,262144 --enable-features=EnableTransparentHwndEnlargement,FluentScrollbar,PdfUseShowSaveFilePicker --disable-features=LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3512 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AppActions.exe",
+                          "PID":  5920,
+                          "Path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\AppActions.exe",
+                          "CommandLine":  "\"C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\AppActions.exe\" -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  17640,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ru --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView\" --webview-exe-name=ms-teams.exe --webview-exe-version=26015.1706.4351.4392 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --skip-read-main-dll --metrics-shmem-handle=5740,i,5871439879512182418,8465881888455950632,524288 --field-trial-handle=1796,i,16068499110439456187,6878688939955009542,262144 --enable-features=AutofillReplaceCachedWebElementsByRendererIds,DocumentPolicyIncludeJSCallStacksInCrashReports,PartitionedCookies,PreferredAudioOutputDevices,SharedArrayBuffer,ThirdPartyStoragePartitioning,msAbydos,msAbydosGestureSupport,msAbydosHandwritingAttr,msSingleSignOnOSForPrimaryAccountIsShared,msWebView2EnableDraggableRegions,msWebView2SetUserAgentOverrideOnIframes,msWebView2TerminateServiceWorkerWhenIdleIgnoringCdpSessions,msWebView2TextureStream --disable-features=BlockCrossPartitionBlobUrlFetching,BreakoutBoxPreferCaptureTimestampInVideoFrames,V8Maglev,msEnhancedTrackingPreventionEnabled,msWebOOUI --variations-seed-version --trace-process-track-uuid=3190708992871164437 --mojo-platform-channel-handle=6032 /prefetch:12 /pfhostedapp:aa2a42673e7318fa6ce1d1a4981dd83d3a7d2550",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "M365Copilot.exe",
+                          "PID":  5484,
+                          "Path":  "C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftOfficeHub_19.2602.43201.0_x64__8wekyb3d8bbwe\\M365Copilot.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.MicrosoftOfficeHub_19.2602.43201.0_x64__8wekyb3d8bbwe\\M365Copilot.exe\" autorestart reason=update",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  13428,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  14248,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2602.43201.0 --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --noerrdialogs --embedded-browser-webview-dpi-awareness=2 --disable-features=msEnhancedTrackingPreventionEnabled --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --mojo-named-platform-channel-pipe=5484.11428.17121025774185472418 /pfhostedapp:ae35fe99b330022d19bba167ab6afaa4336f6474",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  3664,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView /prefetch:4 /pfhostedapp:ae35fe99b330022d19bba167ab6afaa4336f6474 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=144.0.7559.133 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --annotation=plat=Win64 \"--annotation=prod=Edge WebView2\" --annotation=ver=144.0.3719.115 --initial-client-data=0x174,0x178,0x17c,0x154,0x184,0x7ffc9fa12c98,0x7ffc9fa12ca4,0x7ffc9fa12cb0",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  22776,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=gpu-process --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2602.43201.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --startup-read-main-dll --metrics-shmem-handle=1676,i,9583118589719060991,7985370750844808559,262144 --field-trial-handle=1792,i,11404184863358086556,11540712073252850401,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1784 /prefetch:2 /pfhostedapp:ae35fe99b330022d19bba167ab6afaa4336f6474",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  6836,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2602.43201.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --startup-read-main-dll --metrics-shmem-handle=2100,i,8545387685819572356,4852279883345573891,524288 --field-trial-handle=1792,i,11404184863358086556,11540712073252850401,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2108 /prefetch:11 /pfhostedapp:ae35fe99b330022d19bba167ab6afaa4336f6474",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  22780,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=service --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2602.43201.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --startup-read-main-dll --metrics-shmem-handle=2336,i,16412435335920640314,14775911877029678242,524288 --field-trial-handle=1792,i,11404184863358086556,11540712073252850401,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2360 /prefetch:13 /pfhostedapp:ae35fe99b330022d19bba167ab6afaa4336f6474",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedgewebview2.exe",
+                          "PID":  20696,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\144.0.3719.115\\msedgewebview2.exe\" --type=renderer --noerrdialogs --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Packages\\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\\LocalState\\EBWebView\" --webview-exe-name=M365Copilot.exe --webview-exe-version=19.2602.43201.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=2 --video-capture-use-gpu-memory-buffer --lang=ru --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --js-flags=\"--expose-gc --ms-user-locale=ru_KZ\" --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=255657310010 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=3844,i,16533373427183574145,2035819935959512282,2097152 --field-trial-handle=1792,i,11404184863358086556,11540712073252850401,262144 --enable-features=msSingleSignOnOSForPrimaryAccountIsShared --disable-features=msEnhancedTrackingPreventionEnabled --variations-seed-version --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3864 /pfhostedapp:ae35fe99b330022d19bba167ab6afaa4336f6474 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  25632,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AMDNoiseSuppression.exe",
+                          "PID":  20920,
+                          "Path":  "C:\\Windows\\system32\\AMD\\ANR\\AMDNoiseSuppression.exe",
+                          "CommandLine":  "C:/Windows/system32/AMD/ANR/AMDNoiseSuppression.exe NoQuit",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "AppVShNotify.exe",
+                          "PID":  6752,
+                          "Path":  "C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\AppVShNotify.exe",
+                          "CommandLine":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\AppVShNotify.exe\"",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Telegram.exe",
+                          "PID":  29128,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SearchIndexer.exe",
+                          "PID":  15136,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ApplicationFrameHost.exe",
+                          "PID":  17400,
+                          "Path":  "C:\\WINDOWS\\system32\\ApplicationFrameHost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\ApplicationFrameHost.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  11588,
+                          "Path":  "C:\\WINDOWS\\system32\\svchost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow -s DevicesFlowUserSvc",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  16856,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "XboxPcAppFT.exe",
+                          "PID":  22172,
+                          "Path":  "C:\\Program Files\\WindowsApps\\Microsoft.GamingApp_2512.1001.36.0_x64__8wekyb3d8bbwe\\XboxPcAppFT.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.GamingApp_2512.1001.36.0_x64__8wekyb3d8bbwe\\XboxPcAppFT.exe\" -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "steamwebhelper.exe",
+                          "PID":  16240,
+                          "Path":  "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ru --service-sandbox-type=audio --enable-chrome-runtime --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1769025840 --steamid=0 --valve-initial-threadpool-size=4 --field-trial-handle=5960,i,10251588549226538638,2425214188557438794,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=5084 --mojo-platform-channel-handle=4780 /prefetch:12",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  12608,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "UserOOBEBroker.exe",
+                          "PID":  15936,
+                          "Path":  "C:\\Windows\\System32\\oobe\\UserOOBEBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\oobe\\UserOOBEBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  17488,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  28440,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=crashpad-handler \"--user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Local\\Microsoft\\Edge\\User Data\" /prefetch:4 --monitor-self-annotation=ptype=crashpad-handler \"--database=C:\\Users\\mi\u0027sha\\AppData\\Local\\Microsoft\\Edge\\User Data\\Crashpad\" --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=145.0.7632.76 \"--annotation=exe=C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --annotation=plat=Win64 --annotation=prod=Edge --annotation=ver=145.0.3800.58 --initial-client-data=0x26c,0x270,0x274,0x268,0x23c,0x7ffc512f0f18,0x7ffc512f0f24,0x7ffc512f0f30",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  19916,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=gpu-process --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --startup-read-main-dll --metrics-shmem-handle=2208,i,8000387311691828009,8591335030566930715,262144 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=2148 /prefetch:2",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  15924,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --startup-read-main-dll --metrics-shmem-handle=2644,i,14999167272801424891,10062603936091862281,524288 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2524 /prefetch:11",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  15900,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=service --startup-read-main-dll --metrics-shmem-handle=2924,i,7110706337201475948,2101178391108963799,524288 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2952 /prefetch:13",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  12532,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=267442822020 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=3744,i,16401534696849480426,9665356985999849821,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3620 /prefetch:9",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  1028,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ru --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --skip-read-main-dll --metrics-shmem-handle=7304,i,10441716658897417715,11074728334791371846,524288 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709008800875870 --mojo-platform-channel-handle=8152 /prefetch:12",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  440,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=video_capture.mojom.VideoCaptureService --lang=ru --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --skip-read-main-dll --metrics-shmem-handle=8692,i,3531774659310262137,16844198068757364526,524288 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709010674959568 --mojo-platform-channel-handle=8656 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  23512,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=utility --utility-sub-type=edge_search_indexer.mojom.SearchIndexerInterfaceBroker --lang=ru --service-sandbox-type=search_indexer --message-loop-type-ui --video-capture-use-gpu-memory-buffer --ssd-no-pressure-read-main-dll --metrics-shmem-handle=4180,i,3476117112873735501,5085992277353715383,524288 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709014423126964 --mojo-platform-channel-handle=7232 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  25084,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  14036,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --instant-process --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=32 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=272997196200 --skip-read-main-dll --metrics-shmem-handle=9108,i,1369966112186284074,951702302067013167,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709016297210662 --mojo-platform-channel-handle=4108 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "RuntimeBroker.exe",
+                          "PID":  10840,
+                          "Path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Microsoft.AAD.BrokerPlugin.exe",
+                          "PID":  1704,
+                          "Path":  "C:\\Windows\\SystemApps\\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\\Microsoft.AAD.BrokerPlugin.exe",
+                          "CommandLine":  "\"C:\\Windows\\SystemApps\\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\\Microsoft.AAD.BrokerPlugin.exe\" -ServerName:App.AppXgvz9wxd0frjs1prgz5kvtcz083996jyv.mca",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ms-teams.exe",
+                          "PID":  15352,
+                          "Path":  "C:\\Program Files\\WindowsApps\\MSTeams_26015.1706.4351.4392_x64__8wekyb3d8bbwe\\ms-teams.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\MSTeams_26015.1706.4351.4392_x64__8wekyb3d8bbwe\\ms-teams.exe\" --process_type=native_module --cloud_type=tfw --module_name=SlimCore --native_msg_channel=4ea8ba0f-825c-44e5-9fe3-174d27df751a_nm_SlimCore_c --session_id=a8914d35-c61d-4194-8840-7bfef515e2ec \"\" \"\" \"\" /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "OneDrive.Sync.Service.exe",
+                          "PID":  18684,
+                          "Path":  "C:\\Program Files\\Microsoft OneDrive\\26.012.0119.0002\\OneDrive.Sync.Service.exe",
+                          "CommandLine":  "/silentConfig",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SystemSettings.exe",
+                          "PID":  10800,
+                          "Path":  "C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe",
+                          "CommandLine":  "\"C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe\" -ServerName:microsoft.windows.immersivecontrolpanel",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  27636,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=313 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=300510303184 --skip-read-main-dll --metrics-shmem-handle=7948,i,9153696909603013069,6191669110513906735,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709279605970231 --mojo-platform-channel-handle=10044 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "dllhost.exe",
+                          "PID":  19400,
+                          "Path":  "C:\\WINDOWS\\system32\\DllHost.exe",
+                          "CommandLine":  "C:\\WINDOWS\\system32\\DllHost.exe /Processid:{B21858C6-9711-4257-99C8-5C0084BEBCE1}",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "dasHost.exe",
+                          "PID":  2800,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  29984,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=371 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=341245885805 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=7908,i,14105529845549739257,2405903798983358611,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709333954397473 --mojo-platform-channel-handle=4616 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  22244,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=373 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=341286448785 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=10628,i,18430845279844659793,6464623855212382052,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709335828481171 --mojo-platform-channel-handle=9232 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  24248,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=377 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=341310034850 --skip-read-main-dll --metrics-shmem-handle=9892,i,13323681018580690632,18128087542805041127,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709339576648567 --mojo-platform-channel-handle=9240 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "OSD.exe",
+                          "PID":  8460,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  17588,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=400 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=341682786615 --skip-read-main-dll --metrics-shmem-handle=11792,i,15439585837706931999,18086015501952490336,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709361128611094 --mojo-platform-channel-handle=11892 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  21020,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=416 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=341782323059 --skip-read-main-dll --metrics-shmem-handle=7112,i,6214464662097024359,1502945477730566056,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709376121280678 --mojo-platform-channel-handle=12008 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "ShellHost.exe",
+                          "PID":  18144,
+                          "Path":  "C:\\Windows\\System32\\ShellHost.exe",
+                          "CommandLine":  "\"C:\\Windows\\System32\\ShellHost.exe\"",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  10772,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\"",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  23064,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe --type=crashpad-handler --user-data-dir=C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\\Crashpad --url=https://f.a.k/e --annotation=_productName=Cursor --annotation=_version=2.5.17 --annotation=plat=Win64 --annotation=prod=Electron --annotation=ver=39.3.0 --initial-client-data=0x580,0x584,0x588,0x57c,0x58c,0x7ff76e3e46ec,0x7ff76e3e46f8,0x7ff76e3e4708",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  13408,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=gpu-process --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1812 /prefetch:2",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  29700,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2076 /prefetch:11",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  15104,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=renderer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Anysphere.Cursor --app-path=\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\resources\\app\" --enable-sandbox --enable-blink-features=HighlightAPI --force-gpu-mem-available-mb=1024 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1771044775644835 --launch-time-ticks=341951173421 --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=3100 --vscode-window-config=vscode:7c0c5aa6-f496-4ab7-8e50-a05a908412b6 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  7000,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=2840 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  1104,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=4408 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  24944,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=417 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=342019567084 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=7840,i,10335927808669504097,5566494955941831800,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709377058322527 --mojo-platform-channel-handle=11748 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  26556,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708995682289984 --mojo-platform-channel-handle=7484 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  22936,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708996619331833 --mojo-platform-channel-handle=7460 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  7972,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708997556373682 --mojo-platform-channel-handle=4680 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  30924,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe\" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=\"C:\\Users\\mi\u0027sha\\AppData\\Roaming\\Cursor\" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=vscode-webview,vscode-file,sentry-ipc --fetch-schemes=vscode-webview,vscode-file,sentry-ipc --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1816,i,7646570319260852264,16038068329999348108,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708998493415531 --mojo-platform-channel-handle=4708 /prefetch:14",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "wslservice.exe",
+                          "PID":  11736,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "Cursor.exe",
+                          "PID":  26864,
+                          "Path":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe",
+                          "CommandLine":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\Cursor.exe --dns-result-order=ipv4first --experimental-network-inspection c:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\cursor-always-local\\dist\\gitWorker.js",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "conhost.exe",
+                          "PID":  18444,
+                          "Path":  "\\\\?\\C:\\WINDOWS\\system32\\conhost.exe",
+                          "CommandLine":  "\\\\?\\C:\\WINDOWS\\system32\\conhost.exe --headless --width 80 --height 30 --signal 0x6fc --server 0x6f4",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "pwsh.exe",
+                          "PID":  30772,
+                          "Path":  "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe\\pwsh.exe",
+                          "CommandLine":  "C:\\Users\\mi\u0027sha\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe -noexit -command \"try { . \\\"c:\\Users\\mi\u0027sha\\AppData\\Local\\Programs\\cursor\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\\\" } catch {}\"",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SearchProtocolHost.exe",
+                          "PID":  21600,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  30940,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "SearchFilterHost.exe",
+                          "PID":  5128,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "WmiPrvSE.exe",
+                          "PID":  7760,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "smartscreen.exe",
+                          "PID":  20048,
+                          "Path":  "C:\\Windows\\System32\\smartscreen.exe",
+                          "CommandLine":  "C:\\Windows\\System32\\smartscreen.exe -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "doctor-gui.exe",
+                          "PID":  30520,
+                          "Path":  "C:\\GoProject\\src\\doctor-ai\\doctor-gui.exe",
+                          "CommandLine":  "\"C:\\GoProject\\src\\doctor-ai\\doctor-gui.exe\" ",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "conhost.exe",
+                          "PID":  31352,
+                          "Path":  "C:\\WINDOWS\\system32\\conhost.exe",
+                          "CommandLine":  "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "OpenConsole.exe",
+                          "PID":  30908,
+                          "Path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.23.20211.0_x64__8wekyb3d8bbwe\\OpenConsole.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.23.20211.0_x64__8wekyb3d8bbwe\\OpenConsole.exe\" -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "WindowsTerminal.exe",
+                          "PID":  24240,
+                          "Path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.23.20211.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+                          "CommandLine":  "\"C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.23.20211.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe\" -Embedding",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "svchost.exe",
+                          "PID":  29952,
+                          "Path":  null,
+                          "CommandLine":  null,
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  8296,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=421 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=343520277628 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=1708,i,10092195026590492946,4390618202979428851,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709380806489923 --mojo-platform-channel-handle=12204 /prefetch:1",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  20524,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=422 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=343520347711 --skip-read-main-dll --metrics-shmem-handle=9340,i,9254641196463971968,6021618660855686131,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709381743531772 --mojo-platform-channel-handle=11396 /prefetch:9",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  9556,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=423 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=343520350646 --skip-read-main-dll --metrics-shmem-handle=8840,i,14623574467051635816,11106690278381981152,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709382680573621 --mojo-platform-channel-handle=11356 /prefetch:9",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  25480,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=424 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=343520353393 --skip-read-main-dll --metrics-shmem-handle=9748,i,833014618605819516,8571859418513896795,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709383617615470 --mojo-platform-channel-handle=11216 /prefetch:9",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "msedge.exe",
+                          "PID":  8612,
+                          "Path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+                          "CommandLine":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=ru --js-flags=--ms-user-locale=ru_KZ --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=425 --time-ticks-at-unix-epoch=-1771044776336900 --launch-time-ticks=343520503352 --skip-read-main-dll --metrics-shmem-handle=8308,i,9938682173167393493,11713361873039938584,2097152 --field-trial-handle=2104,i,7449635865165727574,14668875019340220704,262144 --variations-seed-version --trace-process-track-uuid=3190709384554657319 --mojo-platform-channel-handle=7992 /prefetch:9",
+                          "User":  ""
+                      },
+                      {
+                          "Name":  "powershell.exe",
+                          "PID":  14064,
+                          "Path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                          "CommandLine":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\GoProject\\src\\doctor-ai\\configs\\doctor.ps1 -cmd scan -PolicyPath C:\\GoProject\\src\\doctor-ai\\configs\\policy.json",
+                          "User":  ""
+                      }
+                  ],
+    "Net":  [
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  65517,
+                    "RemoteAddress":  "132.245.230.28",
+                    "RemotePort":  443,
+                    "OwningProcess":  4116
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  65505,
+                    "RemoteAddress":  "52.110.18.136",
+                    "RemotePort":  443,
+                    "OwningProcess":  4116
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  65503,
+                    "RemoteAddress":  "132.245.230.28",
+                    "RemotePort":  443,
+                    "OwningProcess":  4116
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  65502,
+                    "RemoteAddress":  "52.110.18.136",
+                    "RemotePort":  443,
+                    "OwningProcess":  4116
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  65501,
+                    "RemoteAddress":  "52.110.18.136",
+                    "RemotePort":  443,
+                    "OwningProcess":  4116
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  65265,
+                    "RemoteAddress":  "104.18.18.125",
+                    "RemotePort":  443,
+                    "OwningProcess":  29700
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  64271,
+                    "RemoteAddress":  "98.66.133.184",
+                    "RemotePort":  443,
+                    "OwningProcess":  19012
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  64137,
+                    "RemoteAddress":  "23.100.109.78",
+                    "RemotePort":  443,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  63759,
+                    "RemoteAddress":  "52.54.42.5",
+                    "RemotePort":  443,
+                    "OwningProcess":  29700
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  63099,
+                    "RemoteAddress":  "54.147.84.235",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  63021,
+                    "RemoteAddress":  "150.171.28.11",
+                    "RemotePort":  443,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  62678,
+                    "RemoteAddress":  "172.64.148.235",
+                    "RemotePort":  443,
+                    "OwningProcess":  5968
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  62392,
+                    "RemoteAddress":  "52.123.200.50",
+                    "RemotePort":  443,
+                    "OwningProcess":  15352
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  61584,
+                    "RemoteAddress":  "162.159.135.232",
+                    "RemotePort":  443,
+                    "OwningProcess":  23296
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  60910,
+                    "RemoteAddress":  "13.216.168.201",
+                    "RemotePort":  443,
+                    "OwningProcess":  30924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  59187,
+                    "RemoteAddress":  "104.18.19.125",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  59137,
+                    "RemoteAddress":  "98.95.185.24",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  59131,
+                    "RemoteAddress":  "157.240.205.60",
+                    "RemotePort":  5222,
+                    "OwningProcess":  17776
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  58870,
+                    "RemoteAddress":  "104.18.18.125",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  58766,
+                    "RemoteAddress":  "162.159.136.234",
+                    "RemotePort":  443,
+                    "OwningProcess":  23296
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  57927,
+                    "RemoteAddress":  "13.89.178.27",
+                    "RemotePort":  443,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  57727,
+                    "RemoteAddress":  "54.205.25.198",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  57704,
+                    "RemoteAddress":  "34.205.108.95",
+                    "RemotePort":  443,
+                    "OwningProcess":  29700
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  57493,
+                    "RemoteAddress":  "75.2.76.8",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  57216,
+                    "RemoteAddress":  "34.229.67.192",
+                    "RemotePort":  443,
+                    "OwningProcess":  7972
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  55318,
+                    "RemoteAddress":  "52.123.200.48",
+                    "RemotePort":  443,
+                    "OwningProcess":  7372
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  53503,
+                    "RemoteAddress":  "23.100.109.78",
+                    "RemotePort":  443,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  53190,
+                    "RemoteAddress":  "104.18.32.47",
+                    "RemotePort":  443,
+                    "OwningProcess":  5968
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  53034,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  53021,
+                    "OwningProcess":  21832
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  53033,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  53023,
+                    "OwningProcess":  21832
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  53023,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  53033,
+                    "OwningProcess":  14084
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  53021,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  53034,
+                    "OwningProcess":  14084
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  51101,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  19527,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  50770,
+                    "RemoteAddress":  "150.171.27.11",
+                    "RemotePort":  443,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  50702,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  19527,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  50100,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  27060,
+                    "OwningProcess":  21832
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  49670,
+                    "RemoteAddress":  "74.178.130.41",
+                    "RemotePort":  443,
+                    "OwningProcess":  15924
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  49496,
+                    "RemoteAddress":  "98.66.133.184",
+                    "RemotePort":  443,
+                    "OwningProcess":  5352
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  49207,
+                    "RemoteAddress":  "149.154.167.41",
+                    "RemotePort":  443,
+                    "OwningProcess":  29128
+                },
+                {
+                    "LocalAddress":  "10.130.26.41",
+                    "LocalPort":  49206,
+                    "RemoteAddress":  "149.154.167.41",
+                    "RemotePort":  443,
+                    "OwningProcess":  29128
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  27060,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  50100,
+                    "OwningProcess":  14084
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  19527,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  50702,
+                    "OwningProcess":  30520
+                },
+                {
+                    "LocalAddress":  "127.0.0.1",
+                    "LocalPort":  19527,
+                    "RemoteAddress":  "127.0.0.1",
+                    "RemotePort":  51101,
+                    "OwningProcess":  30520
+                }
+            ],
+    "Autoruns":  [
+                     {
+                         "Hive":  "HKCU",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "OneDrive",
+                         "Data":  "\"C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe\" /background"
+                     },
+                     {
+                         "Hive":  "HKCU",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Steam",
+                         "Data":  "\"C:\\Program Files (x86)\\Steam\\steam.exe\" -silent"
+                     },
+                     {
+                         "Hive":  "HKCU",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Teams",
+                         "Data":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated"
+                     },
+                     {
+                         "Hive":  "HKCU",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Discord",
+                         "Data":  "\"C:\\Users\\mi\u0027sha\\AppData\\Local\\Discord\\Update.exe\" --processStart Discord.exe"
+                     },
+                     {
+                         "Hive":  "HKCU",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "Docker Desktop",
+                         "Data":  "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe"
+                     },
+                     {
+                         "Hive":  "HKCU",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "MicrosoftEdgeAutoLaunch_A484860CF4AC1895F3B7C7AA5DAFE728",
+                         "Data":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window --win-session-start"
+                     },
+                     {
+                         "Hive":  "HKLM",
+                         "Key":  "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                         "Name":  "SecurityHealth",
+                         "Data":  "C:\\WINDOWS\\system32\\SecurityHealthSystray.exe"
+                     }
+                 ],
+    "DefenderStatus":  null,
+    "Threats":  {
+
+                }
+}

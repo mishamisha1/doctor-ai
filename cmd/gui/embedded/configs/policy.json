@@ -1,0 +1,12 @@
+{
+  "allowedPackages": [],
+  "quarantinePaths": [
+    "C:\\Users\\*\\AppData\\Local\\Temp\\*",
+    "C:\\Windows\\Temp\\*"
+  ],
+  "autoFix": {
+    "killProcessIf": { "unsigned": true, "pathMatchesQuarantine": true },
+    "disableAutorun": true,
+    "quarantineNewBinariesFromTemp": true
+  }
+}

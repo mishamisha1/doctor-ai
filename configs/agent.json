@@ -1,0 +1,38 @@
+
+
+{
+  "sysmon": {
+  "enabled": true,
+  "autoInstall": true,
+  "exePath": "db/tools/sysmon/Sysmon64.exe",
+  "configPath": "db/sysmon/sysmonconfig.xml"
+  },
+  "policyPath": "configs/policy.json",
+  "intervalSeconds": 10,
+  "output": { "path": "logs/edr_events.jsonl" },
+  "state":  { "path": "logs/agent_state.json" },
+
+  "eventLog": {
+    "enabled": true,
+    "pollSeconds": 10,
+    "sources": [
+      { "log": "Security", "ids": [4688, 4697] },
+      { "log": "System",   "ids": [7045, 7036] },
+      { "log": "Microsoft-Windows-PowerShell/Operational", "ids": [4104] },
+      { "log": "Microsoft-Windows-Sysmon/Operational", "ids": [1, 3, 7, 11, 13] },
+      { "log": "Microsoft-Windows-SMBClient/Operational", "ids": [3000, 3001] }
+    ],
+    "maxEventsPerPoll": 50
+  },
+
+  "registry": {
+    "enabled": true,
+    "pollSeconds": 10,
+    "watch": [
+      { "hive": "HKCU", "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run" },
+      { "hive": "HKCU", "path": "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce" },
+      { "hive": "HKLM", "path": "Software\\Microsoft\\Windows\\CurrentVersion\\Run" },
+      { "hive": "HKLM", "path": "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce" }
+    ]
+  }
+}
