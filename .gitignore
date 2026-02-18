@@ -1,0 +1,39 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+gui
+doctor
+agent
+analyze
+
+# Logs and runtime data
+logs/
+*.log
+quarantine/
+
+# Secrets (never commit)
+.vt_key
+.openai_key
+*_key
+*.key
+
+# Hashlists (user data, recreated if missing)
+whitelist_hashes.json
+blacklist_hashes.json
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Go
+vendor/
+
+# Build output
+/dist/
+/build/
