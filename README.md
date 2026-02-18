@@ -1,4 +1,5 @@
 # Doctor AI
+<img width="1871" height="991" alt="image" src="https://github.com/user-attachments/assets/b685638b-3ee2-4b1e-922f-931ed96a51d6" />
 
 <p align="center">
   <strong>Windows security & health — scan, EDR, AI analysis, VirusTotal, one GUI</strong>
