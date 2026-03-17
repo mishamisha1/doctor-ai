@@ -35,7 +35,7 @@ type ProtectResult struct {
 	Actions []ProtectAction
 }
 
-func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
+func normalizeProtectConfig(cfg ProtectConfig) ProtectConfig {
 	if len(cfg.Roots) == 0 {
 		cfg.Roots = DefaultRoots()
 	}
@@ -51,7 +51,11 @@ func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, erro
 	if cfg.AIModel == "" {
 		cfg.AIModel = "gpt-5-nano"
 	}
+	return cfg
+}
 
+func BuildAutoprotectPlan(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
+	cfg = normalizeProtectConfig(cfg)
 	scanRes, err := ScanQuick(cfg.Roots, cfg.MaxFindings)
 	if err != nil {
 		return ProtectResult{}, err
@@ -70,22 +74,37 @@ func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, erro
 				verdict, note = v, n
 			}
 		}
+		action := "quarantined+kill"
 		if verdict == "allow" {
-			pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: "skipped", Note: note})
-			continue
+			action = "skipped"
 		}
-		if err := enforceThreat(f.Path, cfg.QuarantineDir); err != nil {
-			pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: "failed", Note: err.Error()})
-			continue
-		}
-		pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: "quarantined+kill", Note: note})
+		pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: action, Note: note})
 	}
 	for _, p := range uniquePathLike(cfg.IncidentPaths) {
-		if err := enforceThreat(p, cfg.QuarantineDir); err != nil {
-			pr.Actions = append(pr.Actions, ProtectAction{Path: p, Score: cfg.MinScore, Verdict: "incident", Action: "failed", Note: "from-correlator: " + err.Error()})
+		pr.Actions = append(pr.Actions, ProtectAction{Path: p, Score: cfg.MinScore, Verdict: "incident", Action: "quarantined+kill", Note: "from-correlator"})
+	}
+	return pr, nil
+}
+
+func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
+	cfg = normalizeProtectConfig(cfg)
+	pr, err := BuildAutoprotectPlan(ctx, cfg)
+	if err != nil {
+		return ProtectResult{}, err
+	}
+	for i := range pr.Actions {
+		a := &pr.Actions[i]
+		if a.Action == "skipped" {
 			continue
 		}
-		pr.Actions = append(pr.Actions, ProtectAction{Path: p, Score: cfg.MinScore, Verdict: "incident", Action: "quarantined+kill", Note: "from-correlator"})
+		if err := enforceThreat(a.Path, cfg.QuarantineDir); err != nil {
+			a.Action = "failed"
+			if a.Verdict == "incident" {
+				a.Note = "from-correlator: " + err.Error()
+			} else {
+				a.Note = err.Error()
+			}
+		}
 	}
 	return pr, nil
 }
@@ -135,6 +154,20 @@ func FormatProtectResult(r ProtectResult) string {
 	}
 	for i, a := range r.Actions {
 		fmt.Fprintf(&b, "%d) %s | score=%d | verdict=%s | action=%s\n   note: %s\n", i+1, a.Path, a.Score, a.Verdict, a.Action, a.Note)
+	}
+	return b.String()
+}
+
+func FormatProtectPreview(r ProtectResult) string {
+	var b strings.Builder
+	b.WriteString(FormatResult(r.Scan))
+	b.WriteString("\n[Knight Mode Preview] planned actions:\n")
+	if len(r.Actions) == 0 {
+		b.WriteString("No actions planned.\n")
+		return b.String()
+	}
+	for i, a := range r.Actions {
+		fmt.Fprintf(&b, "%d) %s | score=%d | verdict=%s | WILL=%s\n   note: %s\n", i+1, a.Path, a.Score, a.Verdict, a.Action, a.Note)
 	}
 	return b.String()
 }
