@@ -15,7 +15,9 @@ type Config struct {
 		ConfigPath  string `json:"configPath"`
 	} `json:"sysmon"`
 	Output struct {
-		Path string `json:"path"`
+		Path           string `json:"path"`
+		RetentionHours int    `json:"retentionHours"`
+		MaxLines       int    `json:"maxLines"`
 	} `json:"output"`
 	State struct {
 		Path string `json:"path"`
@@ -52,6 +54,12 @@ func LoadConfig(path string) (*Config, error) {
 	}
 	if c.IntervalSeconds <= 0 {
 		c.IntervalSeconds = 10
+	}
+	if c.Output.RetentionHours <= 0 {
+		c.Output.RetentionHours = 72
+	}
+	if c.Output.MaxLines <= 0 {
+		c.Output.MaxLines = 50000
 	}
 	return &c, nil
 }

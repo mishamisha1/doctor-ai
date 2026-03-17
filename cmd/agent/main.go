@@ -14,7 +14,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	w, err := agent.NewWriter(cfg.Output.Path)
+	w, err := agent.NewWriter(cfg.Output.Path, cfg.Output.RetentionHours, cfg.Output.MaxLines)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "writer error:", err)
 		os.Exit(1)
