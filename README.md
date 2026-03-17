@@ -84,38 +84,7 @@
 - Приложение восстанавливает встроенные конфиги и `sysmonconfig.xml`, а также подтягивает `Sysmon64.exe` в `db/tools/sysmon/` (если отсутствует); запуск Agent завершится ошибкой, если обязательная установка Sysmon не удалась.
 - Для полного функционала рекомендован запуск **от администратора**.
 
----
 
-## Как уменьшить риск детекта EXE как suspicious
-
-Важно: "встроить сертификат легитимности" без внешнего доверенного УЦ нельзя.
-
-Рекомендуется для релиза:
-1. Подписывать build через **OV/EV Code Signing certificate** (лучше EV).
-2. Стабилизировать publisher identity (один cert, одинаковый product name/version).
-3. Делать reproducible release pipeline и публиковать checksums (SHA256).
-4. Отправлять релиз на Microsoft Defender / SmartScreen reputation buildup (постепенно).
-
-Самоподписанный сертификат подходит только для внутренних стендов и не даёт нормальной репутации SmartScreen.
-
----
-
-## Публикация в GitHub (ваш репозиторий)
-
-```powershell
-# 1) добавить ваш remote
- git remote add myrepo https://github.com/<your_user>/<your_repo>.git
-
-# 2) проверить текущую ветку
- git branch --show-current
-
-# 3) отправить изменения
- git push -u myrepo <branch_name>
-```
-
-Если включена 2FA, используйте GitHub PAT/token или GitHub CLI auth.
-
----
 
 ## Сборка
 
