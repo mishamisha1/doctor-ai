@@ -33,7 +33,6 @@
 | **Analyze** | Корреляция цепочек и риск-оценка, опционально AI-объяснения |
 | **Smart Scan** | Локальный эвристический скан подозрительных файлов |
 | **Knight Mode** | Проактивная защита: эвристика + AI verdict + авто-реакция + enforcement по путям из EDR корреляции |
-| **Knight Preview** | Превью действий до применения: что будет остановлено/карантинено |
 | **Update / Drivers** | Update, driver-install/driver-auto, AI Driver Assistant |
 | **VT + Hashlist** | Репутация хэшей, авто-кэширование в whitelist/blacklist |
 | **Self-test** | `simulate-edr` для безопасной проверки детекта без malware |
@@ -57,6 +56,64 @@
 ### API-ключи (опционально)
 - **OpenAI**: для Analyze AI, Knight Mode AI verdict, AI Driver Assistant.
 - **VirusTotal**: для проверки хэшей во вкладке Quarantine.
+
+---
+
+## Быстрый старт (рекомендуемый сценарий)
+
+### Один exe
+1. Собери/возьми `doctor-gui.exe`.
+2. Запусти **от имени администратора**.
+3. В Settings укажи OpenAI и VT ключи (если нужны).
+
+### Рекомендуемый порядок для полноценного детекта
+1. **Start Agent** (сбор EDR в фоне, при этом Sysmon устанавливается/обновляется обязательно).
+2. Подожди накопление событий / запусти Scan.
+3. **Analyze AI** (корреляция + объяснения).
+4. **Knight Mode** (проактивная реакция на подозрительные объекты).
+
+> Если агент не запущен, детект возможен, но качество корреляции ниже (меньше EDR-контекста).
+
+---
+
+
+## Portable / 1 exe и перенос на другой ПК
+
+- `doctor-gui.exe` можно переносить на флешке и запускать на другом Windows ПК.
+- При первом запуске приложение создаёт рабочие пути: `configs/`, `logs/`, `quarantine/`, `db/sysmon/`, `db/tools/sysmon/`.
+- Приложение восстанавливает встроенные конфиги и `sysmonconfig.xml`, а также подтягивает `Sysmon64.exe` в `db/tools/sysmon/` (если отсутствует); запуск Agent завершится ошибкой, если обязательная установка Sysmon не удалась.
+- Для полного функционала рекомендован запуск **от администратора**.
+
+---
+
+## Как уменьшить риск детекта EXE как suspicious
+
+Важно: "встроить сертификат легитимности" без внешнего доверенного УЦ нельзя.
+
+Рекомендуется для релиза:
+1. Подписывать build через **OV/EV Code Signing certificate** (лучше EV).
+2. Стабилизировать publisher identity (один cert, одинаковый product name/version).
+3. Делать reproducible release pipeline и публиковать checksums (SHA256).
+4. Отправлять релиз на Microsoft Defender / SmartScreen reputation buildup (постепенно).
+
+Самоподписанный сертификат подходит только для внутренних стендов и не даёт нормальной репутации SmartScreen.
+
+---
+
+## Публикация в GitHub (ваш репозиторий)
+
+```powershell
+# 1) добавить ваш remote
+ git remote add myrepo https://github.com/<your_user>/<your_repo>.git
+
+# 2) проверить текущую ветку
+ git branch --show-current
+
+# 3) отправить изменения
+ git push -u myrepo <branch_name>
+```
+
+Если включена 2FA, используйте GitHub PAT/token или GitHub CLI auth.
 
 ---
 
