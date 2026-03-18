@@ -60,15 +60,17 @@ func resolveBaseDir() string {
 		exeDir = filepath.Dir(self)
 	}
 	cwd, _ := os.Getwd()
-	for _, candidate := range []string{cwd, exeDir} {
-		if strings.TrimSpace(candidate) == "" {
-			continue
-		}
-		if pathExists(filepath.Join(candidate, "go.mod")) ||
-			pathExists(filepath.Join(candidate, "configs")) ||
-			pathExists(filepath.Join(candidate, "logs")) {
-			return candidate
-		}
+	return resolveBaseDirFrom(cwd, exeDir, pathExists)
+}
+
+func resolveBaseDirFrom(cwd, exeDir string, exists func(string) bool) string {
+	if strings.TrimSpace(exeDir) != "" &&
+		(exists(filepath.Join(exeDir, "configs")) || exists(filepath.Join(exeDir, "logs"))) {
+		return exeDir
+	}
+	if strings.TrimSpace(cwd) != "" &&
+		(exists(filepath.Join(cwd, "go.mod")) || exists(filepath.Join(cwd, "configs")) || exists(filepath.Join(cwd, "logs"))) {
+		return cwd
 	}
 	if exeDir != "" {
 		return exeDir

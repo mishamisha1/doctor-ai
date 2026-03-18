@@ -1,28 +1,23 @@
 package main
 
-import (
-	"os"
-	"path/filepath"
-	"testing"
-)
+import "testing"
 
 func TestResolveBaseDir_PrefersWorkingTree(t *testing.T) {
-	wd, err := os.Getwd()
-	if err != nil {
-		t.Fatal(err)
+	exists := func(path string) bool {
+		return path == "/repo/go.mod"
 	}
-	tmp := t.TempDir()
-	if err := os.Chdir(tmp); err != nil {
-		t.Fatal(err)
+	got := resolveBaseDirFrom("/repo", "/tmp/go-build/app", exists)
+	if got != "/repo" {
+		t.Fatalf("resolveBaseDirFrom() = %q, want %q", got, "/repo")
 	}
-	t.Cleanup(func() { _ = os.Chdir(wd) })
+}
 
-	if err := os.WriteFile(filepath.Join(tmp, "go.mod"), []byte("module example.com/test\n"), 0644); err != nil {
-		t.Fatal(err)
+func TestResolveBaseDir_PrefersExecutableDirWhenItHasRuntimeLayout(t *testing.T) {
+	exists := func(path string) bool {
+		return path == "/app/configs"
 	}
-
-	got := resolveBaseDir()
-	if got != tmp {
-		t.Fatalf("resolveBaseDir() = %q, want %q", got, tmp)
+	got := resolveBaseDirFrom("/repo", "/app", exists)
+	if got != "/app" {
+		t.Fatalf("resolveBaseDirFrom() = %q, want %q", got, "/app")
 	}
 }
