@@ -51,6 +51,7 @@ func init() {
 	ensureEmbeddedFile(policyPath, "embedded/configs/policy.json")
 	ensureEmbeddedFile(agentPath, "embedded/configs/agent.json")
 	ensureDefaultSysmonConfig()
+	// GUI и Lab ожидают наличие файла телеметрии даже до первого события.
 	ensureFileExists(filepath.Join(logsDir, "edr_events.jsonl"))
 }
 

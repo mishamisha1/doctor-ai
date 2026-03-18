@@ -37,6 +37,9 @@ func TestRunAutoprotect_TakesActionOnHighScore(t *testing.T) {
 		for _, a := range res.Actions {
 			if a.Action == "failed" {
 				failed++
+				if a.Note == "" {
+					t.Fatalf("expected failure note for non-windows enforcement, got empty note in action=%+v", a)
+				}
 			}
 		}
 		if failed == 0 {

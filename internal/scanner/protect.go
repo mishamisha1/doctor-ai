@@ -148,6 +148,8 @@ func aiVerdict(ctx context.Context, key, model string, f Finding) (string, strin
 func parseAIVerdictToken(s string) (string, bool) {
 	v := strings.ToLower(strings.TrimSpace(s))
 	v = strings.Trim(v, "`\"'.,:;!?()[]{}")
+	// Принимаем только строгий однословный токен, чтобы ответы вроде
+	// "block, do not allow" или "disallow" не интерпретировались неверно.
 	switch v {
 	case "allow", "block":
 		return v, true
