@@ -38,8 +38,7 @@ var (
 )
 
 func init() {
-	self, _ := os.Executable()
-	baseDir = filepath.Dir(self)
+	baseDir = resolveBaseDir()
 	_ = os.Chdir(baseDir)
 	ps1Path = filepath.Join(baseDir, "configs", "doctor.ps1")
 	policyPath = filepath.Join(baseDir, "configs", "policy.json")
@@ -53,6 +52,31 @@ func init() {
 	ensureDefaultSysmonConfig()
 	// GUI и Lab ожидают наличие файла телеметрии даже до первого события.
 	ensureFileExists(filepath.Join(logsDir, "edr_events.jsonl"))
+}
+
+func resolveBaseDir() string {
+	exeDir := ""
+	if self, err := os.Executable(); err == nil && self != "" {
+		exeDir = filepath.Dir(self)
+	}
+	cwd, _ := os.Getwd()
+	for _, candidate := range []string{cwd, exeDir} {
+		if strings.TrimSpace(candidate) == "" {
+			continue
+		}
+		if pathExists(filepath.Join(candidate, "go.mod")) ||
+			pathExists(filepath.Join(candidate, "configs")) ||
+			pathExists(filepath.Join(candidate, "logs")) {
+			return candidate
+		}
+	}
+	if exeDir != "" {
+		return exeDir
+	}
+	if cwd != "" {
+		return cwd
+	}
+	return "."
 }
 
 func ensureEmbeddedFile(dstPath, embedPath string) {
