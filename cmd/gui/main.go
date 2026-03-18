@@ -21,7 +21,6 @@ import (
 	"doctor-ai/internal/agent"
 	aia "doctor-ai/internal/ai"
 	"doctor-ai/internal/collector"
-	"doctor-ai/internal/hashlist"
 	"doctor-ai/internal/model"
 	"doctor-ai/internal/runner"
 	"doctor-ai/internal/scanner"
@@ -41,8 +40,7 @@ var (
 )
 
 func init() {
-	self, _ := os.Executable()
-	baseDir = filepath.Dir(self)
+	baseDir = resolveBaseDir()
 	_ = os.Chdir(baseDir)
 	ps1Path = filepath.Join(baseDir, "configs", "doctor.ps1")
 	policyPath = filepath.Join(baseDir, "configs", "policy.json")
@@ -224,12 +222,10 @@ func runPS1(cmd string, auto bool) (string, error) {
 	})
 }
 
-func handleRun(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
-	cmd := r.FormValue("cmd")
-	auto := r.FormValue("auto") == "1"
-	if cmd == "" {
-		http.Error(w, "missing cmd", 400)
+func autoEnsureSysmonOnStartup() {
+	cfg, err := agent.LoadConfig(agentPath)
+	if err != nil {
+		log.Printf("WARN: startup-check config load failed: %v", err)
 		return
 	}
 	desc := runner.CommandDescriptions[cmd]
@@ -252,28 +248,59 @@ func handleRun(w http.ResponseWriter, r *http.Request) {
 	} else {
 		result += "\n[OK]"
 	}
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	w.Write([]byte(result))
+	if err := ensureRequiredSysmon(cfg); err != nil {
+		log.Printf("WARN: sysmon ensure on startup failed: %v", err)
+		return
+	}
+	log.Printf("INFO: sysmon ensure on startup: OK")
 }
 
-func handleAnalyze(w http.ResponseWriter, r *http.Request) {
-	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{
-		InPath:   filepath.Join(logsDir, "edr_events.jsonl"),
-		LogsDir:  logsDir,
-		EnableAI: true,
-		AIMax:    5,
-		AIModel:  "gpt-4o-mini",
-	})
+func ensureRequiredSysmon(cfg *agent.Config) error {
+	if runtime.GOOS != "windows" {
+		return nil
+	}
+	if !pathExists(cfg.Sysmon.ExePath) {
+		if err := ensureSysmonExecutable(); err != nil {
+			return err
+		}
+	}
+	var last error
+	for i := 0; i < 3; i++ {
+		if err := agent.EnsureSysmon(cfg.Sysmon.ExePath, cfg.Sysmon.ConfigPath); err != nil {
+			last = err
+			time.Sleep(2 * time.Second)
+			continue
+		}
+		return nil
+	}
+	if last != nil {
+		return last
+	}
+	return fmt.Errorf("sysmon ensure failed")
+}
+
+func handleHumanReport(w http.ResponseWriter, r *http.Request) {
+	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{InPath: filepath.Join(logsDir, "edr_events.jsonl"), LogsDir: logsDir})
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	out := res.Log.String()
-	for i, rep := range res.AIReports {
-		out += "\n\n========== AI Report " + fmt.Sprintf("%d", i+1) + " ==========\n" + rep
+	var sb strings.Builder
+	sb.WriteString("Понятный отчёт:\n")
+	if len(res.Incidents) == 0 {
+		sb.WriteString("- Критичных цепочек не найдено.\n")
+	} else {
+		sb.WriteString(fmt.Sprintf("- Найдено инцидентов: %d\n", len(res.Incidents)))
+	}
+	for i, inc := range res.Incidents {
+		sb.WriteString(fmt.Sprintf("\n%d) Риск: %s (score=%d), период: %s - %s\n", i+1, strings.ToUpper(inc.Severity), inc.Score, inc.Start.Format("15:04:05"), inc.End.Format("15:04:05")))
+		if len(inc.Reasons) > 0 {
+			sb.WriteString("   Почему: " + strings.Join(inc.Reasons, "; ") + "\n")
+		}
+		sb.WriteString("   Что делать: Проверьте путь процесса, изолируйте файл, перезапустите Analyze и при необходимости включите Knight Mode.\n")
 	}
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	w.Write([]byte(out))
+	w.Write([]byte(sb.String()))
 }
 
 func bootstrapSysmonOnStartup() {
@@ -467,24 +494,6 @@ func handleAgent(w http.ResponseWriter, r *http.Request) {
 		_ = ag.Run()
 	}()
 	w.Write([]byte("[Agent] запущен, пишет в " + cfg.Output.Path))
-}
-
-func handleAIKey(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" {
-		http.Error(w, "POST only", 405)
-		return
-	}
-	key := r.FormValue("key")
-	if key == "" {
-		http.Error(w, "empty key", 400)
-		return
-	}
-	keyPath := filepath.Join(logsDir, ".openai_key")
-	if err := os.WriteFile(keyPath, []byte(key), 0600); err != nil {
-		http.Error(w, err.Error(), 500)
-		return
-	}
-	w.Write([]byte("OK"))
 }
 
 func handleLatestScan(w http.ResponseWriter, r *http.Request) {
@@ -826,145 +835,82 @@ func handleQuarantineHashes(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(items)
 }
 
-func handleHashlist(w http.ResponseWriter, r *http.Request) {
-	hl, err := hashlist.New(
-		filepath.Join(logsDir, "whitelist_hashes.json"),
-		filepath.Join(logsDir, "blacklist_hashes.json"),
-	)
-	w.Header().Set("Content-Type", "application/json")
-	if err != nil {
-		json.NewEncoder(w).Encode(map[string]interface{}{"whitelist": []string{}, "blacklist": []string{}})
-		return
-	}
-	json.NewEncoder(w).Encode(map[string]interface{}{
-		"whitelist": hl.Whitelist(),
-		"blacklist": hl.Blacklist(),
-	})
-}
-
-func handleVTFileList(w http.ResponseWriter, r *http.Request) {
-	scans, _ := model.FindAllScans(logsDir)
-	edrGlob, _ := filepath.Glob(filepath.Join(logsDir, "edr_*.jsonl"))
-	type fileItem struct {
-		Name string `json:"name"`
-		Path string `json:"path"`
-	}
-	scanItems := make([]fileItem, 0, len(scans))
-	for _, p := range scans {
-		scanItems = append(scanItems, fileItem{Name: filepath.Base(p), Path: p})
-	}
-	edrItems := make([]fileItem, 0, len(edrGlob))
-	for _, p := range edrGlob {
-		edrItems = append(edrItems, fileItem{Name: filepath.Base(p), Path: p})
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]interface{}{
-		"scans": scanItems,
-		"edr":   edrItems,
-	})
-}
-
-func handleCheckFileVT(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" {
+func handleLabGenerate(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
 		http.Error(w, "POST only", 405)
 		return
 	}
-	filePath := r.FormValue("path")
-	if filePath == "" {
-		http.Error(w, "missing path", 400)
-		return
+	scenario := strings.TrimSpace(r.FormValue("scenario"))
+	if scenario == "" {
+		scenario = "mixed"
 	}
-	// path must be under logsDir or baseDir
-	if !strings.HasPrefix(filepath.Clean(filePath), filepath.Clean(logsDir)) &&
-		!strings.HasPrefix(filepath.Clean(filePath), filepath.Clean(baseDir)) {
-		http.Error(w, "forbidden path", 403)
-		return
-	}
-	hashes, err := runner.ExtractHashesFromFile(filePath)
-	if err != nil {
-		http.Error(w, err.Error(), 400)
-		return
-	}
-	hl, err := hashlist.New(
-		filepath.Join(logsDir, "whitelist_hashes.json"),
-		filepath.Join(logsDir, "blacklist_hashes.json"),
-	)
-	if err != nil {
-		http.Error(w, "hashlist: "+err.Error(), 500)
-		return
-	}
-	vtKey, _ := os.ReadFile(filepath.Join(logsDir, ".vt_key"))
-	vt := virustotal.NewClient(strings.TrimSpace(string(vtKey)))
-	if vt.APIKey == "" {
-		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-		w.Write([]byte("Сначала сохраните VirusTotal API ключ в настройках."))
-		return
-	}
-
-	var logOut strings.Builder
-	logOut.WriteString(fmt.Sprintf("Файл: %s\n", filepath.Base(filePath)))
-	logOut.WriteString(fmt.Sprintf("Найдено хэшей: %d\n\n", len(hashes)))
-	checked, white, black := 0, 0, 0
-	for _, h := range hashes {
-		if hl.IsWhitelisted(h) {
-			logOut.WriteString(fmt.Sprintf("%s... whitelist (пропуск)\n", h[:min(16, len(h))]))
-			white++
-			continue
-		}
-		if hl.IsBlacklisted(h) {
-			logOut.WriteString(fmt.Sprintf("%s... blacklist (пропуск)\n", h[:min(16, len(h))]))
-			black++
-			continue
-		}
-		pos, tot, err := vt.CheckHash(r.Context(), h)
-		checked++
-		if err != nil {
-			logOut.WriteString(fmt.Sprintf("%s... VT ошибка: %v\n", h[:min(16, len(h))], err))
-			continue
-		}
-		if tot == 0 {
-			logOut.WriteString(fmt.Sprintf("%s... VT: не найден\n", h[:min(16, len(h))]))
-			continue
-		}
-		if pos > 0 {
-			_ = hl.AddToBlacklist(h)
-			logOut.WriteString(fmt.Sprintf("%s... VT %d/%d -> blacklist\n", h[:min(16, len(h))], pos, tot))
-			black++
-		} else {
-			_ = hl.AddToWhitelist(h)
-			logOut.WriteString(fmt.Sprintf("%s... VT 0/%d -> whitelist\n", h[:min(16, len(h))], tot))
-			white++
+	count := 30
+	if c := strings.TrimSpace(r.FormValue("count")); c != "" {
+		if n, err := strconv.Atoi(c); err == nil {
+			count = n
 		}
 	}
-	logOut.WriteString(fmt.Sprintf("\nИтого: проверено %d, добавлено в whitelist: %d, в blacklist: %d", checked, white, black))
+	if count < 1 {
+		count = 30
+	}
+	if count > 500 {
+		count = 500
+	}
+	events := simulate.GenerateEvents(scenario, count)
+	outPath := filepath.Join(logsDir, "edr_events.jsonl")
+	if err := simulate.WriteJSONL(outPath, events); err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-	w.Write([]byte(logOut.String()))
+	w.Write([]byte(fmt.Sprintf("Lab: generated %d events (%s) -> %s", len(events), scenario, outPath)))
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
+func handleLabAnalyze(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "POST only", 405)
+		return
 	}
-	return b
+	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{
+		InPath:  filepath.Join(logsDir, "edr_events.jsonl"),
+		LogsDir: logsDir,
+	})
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Write([]byte(res.Log.String()))
 }
 
-func handleVTKey(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "POST" {
-		key := r.FormValue("key")
-		keyPath := filepath.Join(logsDir, ".vt_key")
-		if err := os.WriteFile(keyPath, []byte(key), 0600); err != nil {
-			http.Error(w, err.Error(), 500)
+func handleLabTimeline(w http.ResponseWriter, r *http.Request) {
+	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{
+		InPath:  filepath.Join(logsDir, "edr_events.jsonl"),
+		LogsDir: logsDir,
+	})
+	if err != nil {
+		if os.IsNotExist(err) {
+			w.Header().Set("Content-Type", "application/json")
+			_ = json.NewEncoder(w).Encode([]interface{}{})
 			return
 		}
-		w.Write([]byte("OK"))
+		http.Error(w, err.Error(), 500)
 		return
 	}
-	keyPath := filepath.Join(logsDir, ".vt_key")
-	if _, err := os.Stat(keyPath); err == nil {
-		w.Write([]byte("1"))
-	} else {
-		w.Write([]byte("0"))
+	type timelineItem struct {
+		ID       string   `json:"id"`
+		Start    string   `json:"start"`
+		End      string   `json:"end"`
+		Score    int      `json:"score"`
+		Severity string   `json:"severity"`
+		Reasons  []string `json:"reasons"`
 	}
+	items := make([]timelineItem, 0, len(res.Incidents))
+	for _, inc := range res.Incidents {
+		items = append(items, timelineItem{ID: inc.ID, Start: inc.Start.Format(time.RFC3339), End: inc.End.Format(time.RFC3339), Score: inc.Score, Severity: inc.Severity, Reasons: inc.Reasons})
+	}
+	w.Header().Set("Content-Type", "application/json")
+	_ = json.NewEncoder(w).Encode(items)
 }
 
 func handleCustomScan(w http.ResponseWriter, r *http.Request) {
@@ -1869,59 +1815,67 @@ async function uploadAnalyze(){
   hideModal();
 }
 
-async function refreshFlagged(){
-  try{
-    const r=await fetch('/api/flagged-paths');
-    const arr=await r.json();
-    const list=document.getElementById('flaggedList');
-    if(list) list.innerHTML=arr.length?arr.map(x=>'<div>'+escapeHtml(x.path)+' ['+x.severity+']</div>').join(''):'<div>Нет данных. Запустите Analyze.</div>';
-  }catch(e){}
+type downloadedDriver struct {
+	Folder     string `json:"folder"`
+	Provenance string `json:"provenance"`
+	InstallLog string `json:"installLog"`
 }
 
-async function refreshHashlist(){
-  try{
-    const r=await fetch('/api/hashlist');
-    const d=await r.json();
-    const el=document.getElementById('hashlistSummary');
-    if(el) el.textContent='White: '+d.whitelist.length+' | Black: '+d.blacklist.length;
-  }catch(e){}
+type driverReport struct {
+	Installed   []driverItem       `json:"installed"`
+	Problematic []driverItem       `json:"problematic"`
+	Downloaded  []downloadedDriver `json:"downloaded"`
 }
 
-async function refreshVTFileList(){
-  try{
-    const r=await fetch('/api/vt-file-list');
-    const d=await r.json();
-    const scanEl=document.getElementById('vtScanFiles');
-    const edrEl=document.getElementById('vtEdrFiles');
-    if(scanEl){
-      scanEl.innerHTML=(d.scans||[]).map(x=>'<button class="btn vt-file-btn" data-path="'+escapeAttr(x.path)+'">'+escapeHtml(x.name)+'</button>').join('')||'<span style="color:var(--text-muted)">Нет scan_*.json</span>';
-    }
-    if(edrEl){
-      edrEl.innerHTML=(d.edr||[]).map(x=>'<button class="btn vt-file-btn" data-path="'+escapeAttr(x.path)+'">'+escapeHtml(x.name)+'</button>').join('')||'<span style="color:var(--text-muted)">Нет edr_*.jsonl</span>';
-    }
-    document.querySelectorAll('.vt-file-btn').forEach(btn=>{
-      btn.onclick=function(){ checkFileVT(this.getAttribute('data-path')); };
-    });
-  }catch(e){}
+type driverAIPlan struct {
+	Command    string `json:"command"`
+	Reason     string `json:"reason"`
+	TargetHint string `json:"target_hint"`
+	Confidence int    `json:"confidence"`
 }
 
-function escapeAttr(s){
-  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+func handleDriverReport(w http.ResponseWriter, r *http.Request) {
+	rep := collectDriverReport()
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(rep)
 }
 
-async function checkFileVT(path){
-  const logEl=document.getElementById('vtCheckLog');
-  if(logEl) logEl.textContent='Проверка...';
-  try{
-    const fd=new FormData();
-    fd.append('path',path);
-    const r=await fetch('/api/check-file-vt',{method:'POST',body:fd});
-    const text=await r.text();
-    if(logEl) logEl.textContent=text;
-    refreshHashlist();
-  }catch(e){
-    if(logEl) logEl.textContent='Ошибка: '+e.message;
-  }
+func handleDriverAIPlan(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "POST only", 405)
+		return
+	}
+	issue := strings.TrimSpace(r.FormValue("issue"))
+	if issue == "" {
+		http.Error(w, "missing issue", 400)
+		return
+	}
+	key := scanner.LoadOpenAIKey(logsDir)
+	if key == "" {
+		http.Error(w, "OpenAI key not set", 400)
+		return
+	}
+	rep := collectDriverReport()
+	ctx := r.Context()
+	prompt := fmt.Sprintf(`User issue: %s
+Problematic drivers: %v
+Downloaded driver folders: %v
+Return strict JSON only: {"command":"driver-auto|driver-install|none","reason":"...","target_hint":"...","confidence":0-100}`,
+		issue, rep.Problematic, rep.Downloaded)
+	txt, err := aia.NewClient(key, "gpt-5-nano").Explain(ctx, prompt)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	pl := driverAIPlan{Command: "none", Reason: txt, Confidence: 30}
+	if b := extractJSON(txt); b != "" {
+		_ = json.Unmarshal([]byte(b), &pl)
+	}
+	if pl.Command != "driver-auto" && pl.Command != "driver-install" {
+		pl.Command = "none"
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(pl)
 }
 
 async function refreshDriverReport(){
@@ -1988,20 +1942,49 @@ async function refreshQuarantine(){
   }catch(e){}
 }
 
-async function saveVTKey(){
-  const key=document.getElementById('vtkey').value;
-  if(!key){ alert('Введите VT ключ'); return; }
-  const fd=new FormData(); fd.append('key',key);
-  await fetch('/api/vt-key',{method:'POST',body:fd});
-  alert('VirusTotal ключ сохранён');
+func collectDriverReport() driverReport {
+	rep := driverReport{Installed: []driverItem{}, Problematic: []driverItem{}, Downloaded: []downloadedDriver{}}
+	if runtime.GOOS == "windows" {
+		ps := `$drv = Get-CimInstance Win32_PnPSignedDriver | Select-Object FriendlyName, DriverProviderName, DriverVersion, DriverDate, InfName, DeviceID, IsSigned; $dev=Get-CimInstance Win32_PnPEntity | Select-Object Name,PNPDeviceID,ConfigManagerErrorCode; $res=@(); foreach($d in $drv){$err=($dev|Where-Object{$_.PNPDeviceID -eq $d.DeviceID}|Select-Object -First 1).ConfigManagerErrorCode; $prob=($err -ne $null -and [int]$err -ne 0) -or ($d.IsSigned -ne $true); $res += [PSCustomObject]@{deviceName=$d.FriendlyName;provider=$d.DriverProviderName;version=$d.DriverVersion;date=$d.DriverDate;inf=$d.InfName;deviceId=$d.DeviceID;problem=$prob}}; $res|ConvertTo-Json -Depth 4`
+		out, err := exec.Command("powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps).CombinedOutput()
+		if err == nil {
+			body := strings.TrimSpace(string(out))
+			if strings.HasPrefix(body, "[") {
+				_ = json.Unmarshal([]byte(body), &rep.Installed)
+			} else if strings.HasPrefix(body, "{") {
+				var one driverItem
+				if json.Unmarshal([]byte(body), &one) == nil {
+					rep.Installed = append(rep.Installed, one)
+				}
+			}
+			for _, it := range rep.Installed {
+				if it.Problem {
+					rep.Problematic = append(rep.Problematic, it)
+				}
+			}
+		}
+	}
+	entries, _ := os.ReadDir(logsDir)
+	for _, e := range entries {
+		if !e.IsDir() || !strings.HasPrefix(e.Name(), "driver_auto_") {
+			continue
+		}
+		d := filepath.Join(logsDir, e.Name())
+		pb, _ := os.ReadFile(filepath.Join(d, "provenance.txt"))
+		ib, _ := os.ReadFile(filepath.Join(d, "install.log"))
+		rep.Downloaded = append(rep.Downloaded, downloadedDriver{Folder: e.Name(), Provenance: trimStr(string(pb), 600), InstallLog: trimStr(string(ib), 600)})
+	}
+	return rep
 }
 
-async function saveVTKeyFromSettings(){
-  const key=document.getElementById('vtkeySettings').value;
-  if(!key){ alert('Введите VT ключ'); return; }
-  const fd=new FormData(); fd.append('key',key);
-  await fetch('/api/vt-key',{method:'POST',body:fd});
-  alert('Сохранено');
+func trimStr(s string, max int) string {
+	if max <= 0 {
+		return ""
+	}
+	if len(s) <= max {
+		return s
+	}
+	return s[:max] + "..."
 }
 
 function humanBytes(n){
