@@ -1,0 +1,104 @@
+name: windows-e2e-smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "work" ]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: [self-hosted, windows]
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build GUI
+        shell: pwsh
+        run: go build ./cmd/gui
+
+      - name: Vet project
+        shell: pwsh
+        run: go vet ./...
+
+      - name: Test project
+        shell: pwsh
+        run: go test ./...
+
+      - name: Start GUI and wait for readiness
+        shell: pwsh
+        run: |
+          $env:DOCTOR_GUI_ADDR = '127.0.0.1:19527'
+          $proc = Start-Process -FilePath 'go' -ArgumentList 'run ./cmd/gui' -PassThru -WindowStyle Hidden
+          "$($proc.Id)" | Out-File -FilePath "$env:RUNNER_TEMP\doctor_gui.pid" -Encoding ascii -Force
+
+          $ready = $false
+          for ($i = 0; $i -lt 30; $i++) {
+            try {
+              $resp = Invoke-WebRequest -Method GET -Uri 'http://127.0.0.1:19527/api/status' -TimeoutSec 2
+              if ($resp.StatusCode -ge 200 -and $resp.StatusCode -lt 300) {
+                $ready = $true
+                break
+              }
+            } catch {
+              Start-Sleep -Seconds 1
+            }
+          }
+
+          if (-not $ready) {
+            throw 'GUI did not become ready within 30 seconds'
+          }
+
+      - name: Smoke API
+        shell: pwsh
+        run: |
+          $base = 'http://127.0.0.1:19527'
+
+          function Assert-Ok {
+            param(
+              [string]$Method,
+              [string]$Path,
+              [object]$Body = $null
+            )
+            $uri = "$base$Path"
+            if ($null -eq $Body) {
+              $resp = Invoke-WebRequest -Method $Method -Uri $uri -TimeoutSec 20
+            } else {
+              $resp = Invoke-WebRequest -Method $Method -Uri $uri -Body $Body -TimeoutSec 20
+            }
+            if ($resp.StatusCode -lt 200 -or $resp.StatusCode -ge 300) {
+              throw "Non-2xx response for $Method $Path: $($resp.StatusCode)"
+            }
+          }
+
+          Assert-Ok -Method GET -Path '/'
+          Assert-Ok -Method GET -Path '/api/status'
+          Assert-Ok -Method GET -Path '/api/startup-check'
+          Assert-Ok -Method GET -Path '/api/scan-history'
+          Assert-Ok -Method GET -Path '/api/events-tail'
+          Assert-Ok -Method GET -Path '/api/quick-check'
+          Assert-Ok -Method GET -Path '/api/log-health'
+          Assert-Ok -Method GET -Path '/api/auto-protect-preview?profile=monitor'
+          Assert-Ok -Method GET -Path '/api/auto-protect-preview?profile=soft-block'
+          Assert-Ok -Method GET -Path '/api/auto-protect-preview?profile=aggressive'
+          Assert-Ok -Method POST -Path '/api/lab-generate' -Body @{ scenario = 'mixed'; count = '5' }
+          Assert-Ok -Method POST -Path '/api/lab-analyze'
+          Assert-Ok -Method GET -Path '/api/lab-timeline'
+
+      - name: Stop GUI process
+        if: always()
+        shell: pwsh
+        run: |
+          $pidPath = "$env:RUNNER_TEMP\doctor_gui.pid"
+          if (Test-Path $pidPath) {
+            $pidText = Get-Content $pidPath -ErrorAction SilentlyContinue
+            if ($pidText) {
+              Stop-Process -Id ([int]$pidText) -Force -ErrorAction SilentlyContinue
+            }
+          }
