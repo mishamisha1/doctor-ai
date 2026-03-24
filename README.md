@@ -153,6 +153,9 @@ go build -o dist/doctor-gui ./cmd/gui
 
 # 2) прогнать базовую проверку вкладок/API и логирования агента
 bash scripts/gui_smoke.sh
+
+# 3) убедиться, что в репозитории нет неразрешённых merge-маркеров
+bash scripts/check_merge_markers.sh
 ```
 
 ---
