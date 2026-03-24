@@ -1933,13 +1933,23 @@ async function applyDriverAI(btn){
   hideModal(); setBtnWorking(btn,false);
 }
 
-async function refreshQuarantine(){
-  try{
-    const r=await fetch('/api/quarantine-hashes');
-    const arr=await r.json();
-    const list=document.getElementById('quarantineList');
-    if(list) list.innerHTML=arr.length?arr.map(x=>'<div>'+escapeHtml(x.name)+'</div>').join(''):'<div>Карантин пуст</div>';
-  }catch(e){}
+func handleDriverAIApply(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "POST only", 405)
+		return
+	}
+	cmd := strings.TrimSpace(r.FormValue("command"))
+	if cmd != "driver-auto" && cmd != "driver-install" {
+		http.Error(w, "unsupported command", 400)
+		return
+	}
+	err := collector.StartDoctorPS1InteractiveTerminal(collector.PS1Args{PS1Path: ps1Path, Cmd: cmd, PolicyPath: policyPath, WorkingDir: baseDir})
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Write([]byte("AI plan confirmed. Interactive driver flow launched in separate terminal."))
 }
 
 func collectDriverReport() driverReport {
@@ -2023,12 +2033,17 @@ async function compactLogsNow(btn){
   setBtnWorking(btn, false);
 }
 
-async function refreshActivity(){
-  try{
-    const r=await fetch('/api/events-tail');
-    const arr=await r.json();
-    document.getElementById('activityList').innerHTML=arr.map(x=>'<div>'+escapeHtml(x)+'</div>').join('')||'<div>Нет событий</div>';
-  }catch(e){ document.getElementById('activityList').innerHTML='<div>—</div>'; }
+func extractJSON(s string) string {
+	s = strings.TrimSpace(s)
+	if strings.HasPrefix(s, "{") && strings.HasSuffix(s, "}") {
+		return s
+	}
+	start := strings.Index(s, "{")
+	end := strings.LastIndex(s, "}")
+	if start >= 0 && end > start {
+		return s[start : end+1]
+	}
+	return ""
 }
 function escapeHtml(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
 
