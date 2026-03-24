@@ -502,9 +502,8 @@ func handleLatestScan(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	scan, err := model.LoadScan(p)
-	if err != nil {
-		http.Error(w, err.Error(), 500)
+	if err := ensureRequiredSysmon(cfg); err != nil {
+		log.Printf("WARN: sysmon ensure on startup failed: %v", err)
 		return
 	}
 	out := fmt.Sprintf("Последний скан: %s\nHost: %s | Time: %s\nProcesses: %d | Autoruns: %d | Net: %d",
@@ -539,23 +538,13 @@ func handleStatus(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(status)
 }
 
-func handleScanHistory(w http.ResponseWriter, r *http.Request) {
-	matches, err := model.FindAllScans(logsDir)
-	if err != nil {
-		http.Error(w, err.Error(), 500)
-		return
+func ensureRequiredSysmon(cfg *agent.Config) error {
+	if runtime.GOOS != "windows" {
+		return nil
 	}
-	type item struct {
-		File string `json:"file"`
-		Date string `json:"date"`
-	}
-	items := make([]item, 0, len(matches))
-	for _, m := range matches {
-		base := filepath.Base(m)
-		// scan_20260218_123456.json -> 18 FEB
-		date := base
-		if len(base) >= 21 && strings.HasPrefix(base, "scan_") {
-			date = base[11:13] + " " + monthName(base[9:11])
+	if !pathExists(cfg.Sysmon.ExePath) {
+		if err := ensureSysmonExecutable(); err != nil {
+			return err
 		}
 		items = append(items, item{File: base, Date: date})
 	}
@@ -693,11 +682,11 @@ func handleEventsTail(w http.ResponseWriter, r *http.Request) {
 	if len(lines) < n {
 		n = len(lines)
 	}
-	tail := lines[len(lines)-n:]
-	// extract short preview from each line (path or type)
-	previews := make([]string, 0, n)
-	for _, l := range tail {
-		if l == "" {
+	var last error
+	for i := 0; i < 3; i++ {
+		if err := agent.EnsureSysmon(cfg.Sysmon.ExePath, cfg.Sysmon.ConfigPath); err != nil {
+			last = err
+			time.Sleep(2 * time.Second)
 			continue
 		}
 		var evt struct {
@@ -723,20 +712,16 @@ func handleEventsTail(w http.ResponseWriter, r *http.Request) {
 		}
 		previews = append(previews, preview)
 	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(previews)
+	if last != nil {
+		return last
+	}
+	return fmt.Errorf("sysmon ensure failed")
 }
 
-func handleQuickCheck(w http.ResponseWriter, r *http.Request) {
-	inPath := filepath.Join(logsDir, "edr_events.jsonl")
-	events, incidents, err := runner.QuickThreatCount(inPath)
-	if err != nil {
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"error": err.Error(), "events": 0, "incidents": 0})
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]interface{}{"events": events, "incidents": incidents})
+type flaggedItem struct {
+	Path     string `json:"path"`
+	Severity string `json:"severity"`
+	Reasons  string `json:"reasons"`
 }
 
 type flaggedItem struct {
