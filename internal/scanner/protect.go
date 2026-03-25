@@ -36,6 +36,7 @@ type ProtectResult struct {
 }
 
 func normalizeProtectConfig(cfg ProtectConfig) ProtectConfig {
+func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
 	if len(cfg.Roots) == 0 {
 		cfg.Roots = DefaultRoots()
 	}
@@ -56,6 +57,7 @@ func normalizeProtectConfig(cfg ProtectConfig) ProtectConfig {
 
 func BuildAutoprotectPlan(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
 	cfg = normalizeProtectConfig(cfg)
+
 	scanRes, err := ScanQuick(cfg.Roots, cfg.MaxFindings)
 	if err != nil {
 		return ProtectResult{}, err
@@ -105,6 +107,22 @@ func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, erro
 				a.Note = err.Error()
 			}
 		}
+		if verdict == "allow" {
+			pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: "skipped", Note: note})
+			continue
+		}
+		if err := enforceThreat(f.Path, cfg.QuarantineDir); err != nil {
+			pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: "failed", Note: err.Error()})
+			continue
+		}
+		pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: "quarantined+kill", Note: note})
+	}
+	for _, p := range uniquePathLike(cfg.IncidentPaths) {
+		if err := enforceThreat(p, cfg.QuarantineDir); err != nil {
+			pr.Actions = append(pr.Actions, ProtectAction{Path: p, Score: cfg.MinScore, Verdict: "incident", Action: "failed", Note: "from-correlator: " + err.Error()})
+			continue
+		}
+		pr.Actions = append(pr.Actions, ProtectAction{Path: p, Score: cfg.MinScore, Verdict: "incident", Action: "quarantined+kill", Note: "from-correlator"})
 	}
 	return pr, nil
 }
@@ -156,6 +174,14 @@ func parseAIVerdictToken(s string) (string, bool) {
 	default:
 		return "", false
 	}
+	l := strings.ToLower(strings.TrimSpace(txt))
+	if strings.Contains(l, "allow") {
+		return "allow", "ai-allow"
+	}
+	if strings.Contains(l, "block") || strings.Contains(l, "high") || strings.Contains(l, "mal") {
+		return "block", "ai-block"
+	}
+	return "suspicious", "ai-unclear"
 }
 
 func FormatProtectResult(r ProtectResult) string {

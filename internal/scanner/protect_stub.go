@@ -13,4 +13,8 @@ func enforceThreat(path, quarantineDir string) error {
 
 func runtimeGOOS() string {
 	return runtime.GOOS
+func enforceThreat(path, quarantineDir string) error {
+	_ = path
+	_ = quarantineDir
+	return nil
 }

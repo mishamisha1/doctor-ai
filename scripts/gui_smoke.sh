@@ -29,6 +29,7 @@ if [[ ! -x "$GUI_BIN" ]]; then
 fi
 
 DOCTOR_GUI_ADDR="$ADDR" "$GUI_BIN" >"$LOG_TMP" 2>&1 &
+DOCTOR_GUI_ADDR="$ADDR" ./dist/doctor-gui >"$LOG_TMP" 2>&1 &
 echo $! > "$PID_FILE"
 
 ready=0
@@ -55,6 +56,8 @@ check_get() {
     fi
     sleep 1
   done
+  local code
+  code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' "$BASE$path")"
   echo "GET $path -> $code"
   [[ "$code" == "200" ]]
 }
@@ -74,6 +77,12 @@ check_post() {
     fi
     sleep 1
   done
+  local code
+  if [[ -n "$data" ]]; then
+    code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' -X POST -d "$data" "$BASE$path")"
+  else
+    code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' -X POST "$BASE$path")"
+  fi
   echo "POST $path -> $code"
   [[ "$code" == "200" ]]
 }
