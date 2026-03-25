@@ -11,6 +11,7 @@ import (
 
 	"doctor-ai/internal/collector"
 	"doctor-ai/internal/model"
+	"doctor-ai/internal/simulate"
 )
 
 func usage() {
@@ -28,6 +29,7 @@ func usage() {
 	fmt.Println("  analyze              run analyze.exe [--ai ...]")
 	fmt.Println("  ai-set-key           store OpenAI API key into <logs>/.openai_key")
 	fmt.Println("  ai-test              check OpenAI API key (env or <logs>/.openai_key)")
+	fmt.Println("  simulate-edr         generate synthetic EDR events for correlation/protection tests")
 	fmt.Println("")
 	fmt.Println("Examples:")
 	fmt.Println(`  doctor scan --logs logs`)
@@ -35,6 +37,7 @@ func usage() {
 	fmt.Println(`  doctor ai-set-key --logs logs`)
 	fmt.Println(`  doctor analyze --in logs/edr_events.jsonl --logs logs --ai --ai-out logs/ai_report.txt`)
 	fmt.Println(`  doctor agent-run --config configs/agent.json`)
+	fmt.Println(`  doctor simulate-edr --out logs/edr_events.jsonl --scenario mixed --count 30`)
 	fmt.Println(`  doctor gui                 launch GUI (doctor-gui.exe)`)
 }
 
@@ -219,6 +222,25 @@ func main() {
 				fmt.Fprintln(os.Stderr, "ERROR:", err)
 				os.Exit(1)
 			}
+			return
+		}
+
+	case "simulate-edr":
+		{
+			fs := flag.NewFlagSet("simulate-edr", flag.ExitOnError)
+			outPath := fs.String("out", "logs/edr_events.jsonl", "output jsonl path")
+			scenario := fs.String("scenario", "mixed", "benign|malicious|mixed")
+			count := fs.Int("count", 20, "number of events")
+			_ = fs.Parse(os.Args[2:])
+			if *count <= 0 {
+				*count = 20
+			}
+			events := simulate.GenerateEvents(*scenario, *count)
+			if err := simulate.WriteJSONL(*outPath, events); err != nil {
+				fmt.Fprintln(os.Stderr, "ERROR:", err)
+				os.Exit(1)
+			}
+			fmt.Printf("OK: generated %d events -> %s\n", len(events), *outPath)
 			return
 		}
 
