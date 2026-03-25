@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 	"path/filepath"
+	"runtime"
 	"testing"
 )
 
@@ -30,5 +31,39 @@ func TestRunAutoprotect_TakesActionOnHighScore(t *testing.T) {
 	}
 	if len(res.Actions) == 0 {
 		t.Fatalf("expected at least one action, got 0; matches=%d", len(res.Scan.Matches))
+	}
+	if runtime.GOOS != "windows" {
+		failed := 0
+		for _, a := range res.Actions {
+			if a.Action == "failed" {
+				failed++
+				if a.Note == "" {
+					t.Fatalf("expected failure note for non-windows enforcement, got empty note in action=%+v", a)
+				}
+			}
+		}
+		if failed == 0 {
+			t.Fatalf("expected failed actions on non-windows enforcement stub, got actions=%+v", res.Actions)
+		}
+	}
+}
+
+func TestParseAIVerdictToken_Strict(t *testing.T) {
+	tests := []struct {
+		in   string
+		ok   bool
+		want string
+	}{
+		{in: "allow", ok: true, want: "allow"},
+		{in: "BLOCK", ok: true, want: "block"},
+		{in: "\"allow\"", ok: true, want: "allow"},
+		{in: "block, do not allow", ok: false, want: ""},
+		{in: "disallow", ok: false, want: ""},
+	}
+	for _, tc := range tests {
+		got, ok := parseAIVerdictToken(tc.in)
+		if ok != tc.ok || got != tc.want {
+			t.Fatalf("parseAIVerdictToken(%q) = (%q,%v), want (%q,%v)", tc.in, got, ok, tc.want, tc.ok)
+		}
 	}
 }

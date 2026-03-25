@@ -35,6 +35,7 @@ type ProtectResult struct {
 	Actions []ProtectAction
 }
 
+func normalizeProtectConfig(cfg ProtectConfig) ProtectConfig {
 func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
 	if len(cfg.Roots) == 0 {
 		cfg.Roots = DefaultRoots()
@@ -51,6 +52,11 @@ func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, erro
 	if cfg.AIModel == "" {
 		cfg.AIModel = "gpt-5-nano"
 	}
+	return cfg
+}
+
+func BuildAutoprotectPlan(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
+	cfg = normalizeProtectConfig(cfg)
 
 	scanRes, err := ScanQuick(cfg.Roots, cfg.MaxFindings)
 	if err != nil {
@@ -68,6 +74,37 @@ func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, erro
 			v, n := aiVerdict(ctx, cfg.OpenAIKey, cfg.AIModel, f)
 			if v != "" {
 				verdict, note = v, n
+			}
+		}
+		action := "quarantined+kill"
+		if verdict == "allow" {
+			action = "skipped"
+		}
+		pr.Actions = append(pr.Actions, ProtectAction{Path: f.Path, Score: f.Score, Verdict: verdict, Action: action, Note: note})
+	}
+	for _, p := range uniquePathLike(cfg.IncidentPaths) {
+		pr.Actions = append(pr.Actions, ProtectAction{Path: p, Score: cfg.MinScore, Verdict: "incident", Action: "quarantined+kill", Note: "from-correlator"})
+	}
+	return pr, nil
+}
+
+func RunAutoprotect(ctx context.Context, cfg ProtectConfig) (ProtectResult, error) {
+	cfg = normalizeProtectConfig(cfg)
+	pr, err := BuildAutoprotectPlan(ctx, cfg)
+	if err != nil {
+		return ProtectResult{}, err
+	}
+	for i := range pr.Actions {
+		a := &pr.Actions[i]
+		if a.Action == "skipped" {
+			continue
+		}
+		if err := enforceThreat(a.Path, cfg.QuarantineDir); err != nil {
+			a.Action = "failed"
+			if a.Verdict == "incident" {
+				a.Note = "from-correlator: " + err.Error()
+			} else {
+				a.Note = err.Error()
 			}
 		}
 		if verdict == "allow" {
@@ -115,6 +152,28 @@ func aiVerdict(ctx context.Context, key, model string, f Finding) (string, strin
 	if err != nil {
 		return "", "ai-error"
 	}
+	if v, ok := parseAIVerdictToken(txt); ok {
+		if v == "allow" {
+			return "allow", "ai-allow"
+		}
+		if v == "block" {
+			return "block", "ai-block"
+		}
+	}
+	return "suspicious", "ai-unclear"
+}
+
+func parseAIVerdictToken(s string) (string, bool) {
+	v := strings.ToLower(strings.TrimSpace(s))
+	v = strings.Trim(v, "`\"'.,:;!?()[]{}")
+	// Принимаем только строгий однословный токен, чтобы ответы вроде
+	// "block, do not allow" или "disallow" не интерпретировались неверно.
+	switch v {
+	case "allow", "block":
+		return v, true
+	default:
+		return "", false
+	}
 	l := strings.ToLower(strings.TrimSpace(txt))
 	if strings.Contains(l, "allow") {
 		return "allow", "ai-allow"
@@ -135,6 +194,20 @@ func FormatProtectResult(r ProtectResult) string {
 	}
 	for i, a := range r.Actions {
 		fmt.Fprintf(&b, "%d) %s | score=%d | verdict=%s | action=%s\n   note: %s\n", i+1, a.Path, a.Score, a.Verdict, a.Action, a.Note)
+	}
+	return b.String()
+}
+
+func FormatProtectPreview(r ProtectResult) string {
+	var b strings.Builder
+	b.WriteString(FormatResult(r.Scan))
+	b.WriteString("\n[Knight Mode Preview] planned actions:\n")
+	if len(r.Actions) == 0 {
+		b.WriteString("No actions planned.\n")
+		return b.String()
+	}
+	for i, a := range r.Actions {
+		fmt.Fprintf(&b, "%d) %s | score=%d | verdict=%s | WILL=%s\n   note: %s\n", i+1, a.Path, a.Score, a.Verdict, a.Action, a.Note)
 	}
 	return b.String()
 }

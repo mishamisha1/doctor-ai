@@ -8,6 +8,7 @@ ADDR="${DOCTOR_GUI_ADDR:-127.0.0.1:19560}"
 BASE="http://$ADDR"
 LOG_TMP="/tmp/doctor-gui-smoke.log"
 PID_FILE="/tmp/doctor-gui-smoke.pid"
+GUI_BIN="${GUI_BIN:-dist/doctor-gui}"
 
 cleanup() {
   if [[ -f "$PID_FILE" ]]; then
@@ -18,6 +19,16 @@ cleanup() {
 }
 trap cleanup EXIT
 
+if [[ ! -x "$GUI_BIN" ]]; then
+  if [[ -x "./doctor-gui" ]]; then
+    GUI_BIN="./doctor-gui"
+  else
+    go build -o dist/doctor-gui ./cmd/gui
+    GUI_BIN="dist/doctor-gui"
+  fi
+fi
+
+DOCTOR_GUI_ADDR="$ADDR" "$GUI_BIN" >"$LOG_TMP" 2>&1 &
 DOCTOR_GUI_ADDR="$ADDR" ./dist/doctor-gui >"$LOG_TMP" 2>&1 &
 echo $! > "$PID_FILE"
 
@@ -37,6 +48,14 @@ fi
 
 check_get() {
   local path="$1"
+  local code=""
+  for _ in {1..5}; do
+    code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' "$BASE$path" || true)"
+    if [[ "$code" == "200" ]]; then
+      break
+    fi
+    sleep 1
+  done
   local code
   code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' "$BASE$path")"
   echo "GET $path -> $code"
@@ -46,6 +65,18 @@ check_get() {
 check_post() {
   local path="$1"
   local data="${2:-}"
+  local code=""
+  for _ in {1..5}; do
+    if [[ -n "$data" ]]; then
+      code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' -X POST -d "$data" "$BASE$path" || true)"
+    else
+      code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' -X POST "$BASE$path" || true)"
+    fi
+    if [[ "$code" == "200" ]]; then
+      break
+    fi
+    sleep 1
+  done
   local code
   if [[ -n "$data" ]]; then
     code="$(curl -sS -o /tmp/gui-smoke.out -w '%{http_code}' -X POST -d "$data" "$BASE$path")"

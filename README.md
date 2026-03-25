@@ -33,6 +33,7 @@
 | **Analyze** | Корреляция цепочек и риск-оценка, опционально AI-объяснения |
 | **Smart Scan** | Локальный эвристический скан подозрительных файлов |
 | **Knight Mode** | Проактивная защита: эвристика + AI verdict + авто-реакция + enforcement по путям из EDR корреляции |
+| **Knight Preview** | Превью действий до применения: что будет остановлено/карантинено |
 | **Update / Drivers** | Update, driver-install/driver-auto, AI Driver Assistant |
 | **VT + Hashlist** | Репутация хэшей, авто-кэширование в whitelist/blacklist |
 | **Self-test** | `simulate-edr` для безопасной проверки детекта без malware |
@@ -47,6 +48,48 @@
 ### ОС и права
 - **Windows 10/11** (основной target).
 - Для полного функционала (EDR, driver flows, quarantine, process kill) запускай **от администратора**.
+
+### Программы/компоненты
+- **PowerShell 5.1+**.
+- **Go 1.25+** (только если собираешь из исходников).
+- **Sysmon обязателен** для полного EDR-детекта: GUI/Agent выполняет обязательную установку (если включён `autoInstall`).
+
+### API-ключи (опционально)
+- **OpenAI**: для Analyze AI, Knight Mode AI verdict, AI Driver Assistant.
+- **VirusTotal**: для проверки хэшей во вкладке Quarantine.
+
+---
+
+## Быстрый старт (рекомендуемый сценарий)
+
+### Один exe
+1. Собери/возьми `doctor-gui.exe`.
+2. Запусти **от имени администратора**.
+3. В Settings укажи OpenAI и VT ключи (если нужны).
+
+### Рекомендуемый порядок для полноценного детекта
+1. **Start Agent** (сбор EDR в фоне, при этом Sysmon устанавливается/обновляется обязательно).
+2. Подожди накопление событий / запусти Scan.
+3. **Analyze AI** (корреляция + объяснения).
+4. **Knight Preview** (сначала посмотреть план действий).
+5. **Knight Mode** (применить действия).
+
+> Если агент не запущен, детект возможен, но качество корреляции ниже (меньше EDR-контекста).
+
+---
+
+
+## Portable / 1 exe и перенос на другой ПК
+
+- `doctor-gui.exe` можно переносить на флешке и запускать на другом Windows ПК.
+- При первом запуске приложение создаёт рабочие пути: `configs/`, `logs/`, `quarantine/`, `db/sysmon/`, `db/tools/sysmon/`.
+- Приложение восстанавливает встроенные конфиги и `sysmonconfig.xml`, а также подтягивает `Sysmon64.exe` в `db/tools/sysmon/` (если отсутствует); запуск Agent завершится ошибкой, если обязательная установка Sysmon не удалась.
+- Для полного функционала рекомендован запуск **от администратора**.
+
+---
+
+## Как уменьшить риск детекта EXE как suspicious
+
 
 ### Программы/компоненты
 - **PowerShell 5.1+**.
@@ -202,6 +245,52 @@ go build -o analyze.exe  ./cmd/analyze
 go build -o doctor-gui.exe ./cmd/gui
 ```
 
+Альтернатива (PowerShell, проверка merge-маркеров + сборка всего):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build_all.ps1
+```
+
+### Smoke-проверка GUI (локально)
+
+```bash
+# 1) собрать GUI
+go build -o dist/doctor-gui ./cmd/gui
+
+# 2) прогнать базовую проверку вкладок/API и логирования агента
+bash scripts/gui_smoke.sh
+
+# 3) убедиться, что в репозитории нет неразрешённых merge-маркеров
+bash scripts/check_merge_markers.sh
+```
+
+### Если GitHub пишет `This branch has conflicts` (какую кнопку нажимать)
+
+Для конфликтов в файлах:
+- `README.md`
+- `cmd/gui/main.go`
+- `internal/scanner/protect.go`
+- `internal/scanner/protect_stub.go`
+- `internal/scanner/protect_test.go`
+- `scripts/gui_smoke.sh`
+
+рекомендуемый порядок:
+
+1. Нажимайте **`Resolve conflicts`**.
+2. Для каждого блока сначала жмите **`Accept both changes`** (чтобы ничего не потерять).
+3. Сразу после этого вручную удаляйте маркеры `<<<<<<<`, `=======`, `>>>>>>>` и дубликаты строк.
+4. Для спорных мест оставляйте более безопасные/новые варианты:
+   - в `protect.go`: строгий `parseAIVerdictToken` (без `Contains("allow")`);
+   - в `protect_stub.go`: возврат ошибки на non-Windows (не no-op success);
+   - в `protect_test.go`: проверку `failed` на non-Windows и strict parser tests;
+   - в `scripts/gui_smoke.sh`: retry + readiness check.
+5. После ручного резолва нажмите **`Mark as resolved`**, затем **`Commit merge`**.
+6. Локально/в CI обязательно прогоните:
+   - `bash scripts/check_merge_markers.sh`
+   - `go test ./...`
+   - `go build -o doctor-gui.exe ./cmd/gui`
+   - `bash scripts/gui_smoke.sh`
+
 ---
 
 ## CLI команды
@@ -230,6 +319,40 @@ go build -o doctor-gui.exe ./cmd/gui
 ---
 
 ## Self-test: проверить корреляцию/защиту без реального вируса
+
+```powershell
+# 1) Сгенерировать синтетические EDR-события
+.\doctor.exe simulate-edr --out logs\edr_events.jsonl --scenario mixed --count 30
+
+# 2) Проверить корреляцию
+.\analyze.exe
+
+# 3) (опционально) запустить Knight Mode в GUI
+```
+
+Сценарии:
+- `--scenario malicious` — злонамеренные цепочки,
+- `--scenario benign` — в основном безопасный поток,
+- `--scenario mixed` — смешанный поток.
+
+### То же самое в GUI (без консоли)
+Открой вкладку **Lab**:
+1. **Generate stream** (выбери scenario + count),
+2. **Run Analyze**,
+3. **Show timeline** для просмотра инцидентов по времени.
+
+---
+
+## Update / Drivers (что важно знать)
+
+- `driver-install` / `driver-auto` — **интерактивные** операции.
+- Из GUI они запускаются в **отдельном терминале**, чтобы не блокировать сервер GUI.
+- Во вкладке Update доступно:
+  - подробный **Driver Report** (installed/problematic/downloaded),
+  - **AI Driver Assistant**: пользователь описывает проблему (например, "мигает экран"), AI предлагает команду, после подтверждения выполняется установка.
+
+---
+
 
 ```powershell
 # 1) Сгенерировать синтетические EDR-события

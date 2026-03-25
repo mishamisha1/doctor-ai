@@ -52,6 +52,41 @@ func init() {
 	ensureEmbeddedFile(policyPath, "embedded/configs/policy.json")
 	ensureEmbeddedFile(agentPath, "embedded/configs/agent.json")
 	ensureDefaultSysmonConfig()
+	// GUI и Lab ожидают наличие файла телеметрии даже до первого события.
+	ensureFileExists(filepath.Join(logsDir, "edr_events.jsonl"))
+}
+
+func resolveBaseDir() string {
+	exeDir := ""
+	if self, err := os.Executable(); err == nil && self != "" {
+		exeDir = filepath.Dir(self)
+	}
+	cwd, _ := os.Getwd()
+	return resolveBaseDirFrom(cwd, exeDir, pathExists)
+}
+
+func resolveBaseDirFrom(cwd, exeDir string, exists func(string) bool) string {
+	if strings.TrimSpace(exeDir) != "" &&
+		(exists(filepath.Join(exeDir, "configs")) || exists(filepath.Join(exeDir, "logs"))) {
+		return exeDir
+	}
+	if strings.TrimSpace(cwd) != "" &&
+		(exists(filepath.Join(cwd, "go.mod")) || exists(filepath.Join(cwd, "configs")) || exists(filepath.Join(cwd, "logs"))) {
+		return cwd
+	}
+	if exeDir != "" {
+		return exeDir
+	}
+	if cwd != "" {
+		return cwd
+	}
+	return "."
+}
+
+func ensureEmbeddedFile(dstPath, embedPath string) {
+	if _, err := os.Stat(dstPath); err == nil {
+		return
+	}
 }
 
 func ensureEmbeddedFile(dstPath, embedPath string) {
@@ -99,6 +134,22 @@ func ensureDefaultSysmonConfig() {
 	if err := os.WriteFile(cfgPath, []byte(defaultCfg), 0644); err != nil {
 		log.Printf("WARN: failed to create default sysmon config: %v", err)
 	}
+}
+
+func ensureFileExists(path string) {
+	if _, err := os.Stat(path); err == nil {
+		return
+	}
+	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
+		log.Printf("WARN: failed to create parent dir for %s: %v", path, err)
+		return
+	}
+	f, err := os.OpenFile(path, os.O_CREATE, 0644)
+	if err != nil {
+		log.Printf("WARN: failed to create file %s: %v", path, err)
+		return
+	}
+	_ = f.Close()
 }
 
 func ensureSysmonExecutable() error {
@@ -174,6 +225,7 @@ func main() {
 	http.HandleFunc("/api/log-compact", handleLogCompact)
 	http.HandleFunc("/api/custom-scan", handleCustomScan)
 	http.HandleFunc("/api/auto-protect", handleAutoProtect)
+	http.HandleFunc("/api/auto-protect-preview", handleAutoProtectPreview)
 	http.HandleFunc("/api/lab-generate", handleLabGenerate)
 	http.HandleFunc("/api/lab-analyze", handleLabAnalyze)
 	http.HandleFunc("/api/lab-timeline", handleLabTimeline)
@@ -207,6 +259,20 @@ func handleIndex(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(htmlPage))
 }
 
+func bootstrapSysmonOnStartup() {
+	if err := ensureSysmonExecutable(); err != nil {
+		log.Printf("WARN: sysmon bootstrap download failed: %v", err)
+	}
+	autoEnsureSysmonOnStartup()
+}
+
+func autoEnsureSysmonOnStartup() {
+	cfg, err := agent.LoadConfig(agentPath)
+	if err != nil {
+		log.Printf("WARN: startup-check config load failed: %v", err)
+		return
+	}
+	if !cfg.Sysmon.Enabled || !cfg.Sysmon.AutoInstall {
 func isInteractiveCommand(cmd string) bool {
 	switch strings.ToLower(strings.TrimSpace(cmd)) {
 	case "driver-install", "driver-auto":
@@ -506,6 +572,7 @@ func handleLatestScan(w http.ResponseWriter, r *http.Request) {
 		log.Printf("WARN: sysmon ensure on startup failed: %v", err)
 		return
 	}
+	log.Printf("INFO: sysmon ensure on startup: OK")
 	out := fmt.Sprintf("Последний скан: %s\nHost: %s | Time: %s\nProcesses: %d | Autoruns: %d | Net: %d",
 		p, scan.Hostname, scan.Time, len(scan.Processes), len(scan.Autoruns), len(scan.Net))
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
@@ -689,6 +756,7 @@ func handleEventsTail(w http.ResponseWriter, r *http.Request) {
 			time.Sleep(2 * time.Second)
 			continue
 		}
+		return nil
 		var evt struct {
 			Source string                 `json:"source"`
 			Type   string                 `json:"type"`
@@ -722,6 +790,44 @@ type flaggedItem struct {
 	Path     string `json:"path"`
 	Severity string `json:"severity"`
 	Reasons  string `json:"reasons"`
+}
+
+func collectFlaggedFromIncidents(incidents []*model.Incident) []flaggedItem {
+	items := make([]flaggedItem, 0)
+	for _, inc := range incidents {
+		for _, e := range inc.Events {
+			path := ""
+			if e.Data != nil {
+				for _, k := range []string{"image", "target_file", "TargetFilename", "path", "Image"} {
+					if v, ok := e.Data[k]; ok {
+						if s, ok := v.(string); ok && s != "" {
+							path = s
+							break
+						}
+					}
+				}
+			}
+			if path != "" {
+				items = append(items, flaggedItem{Path: path, Severity: inc.Severity, Reasons: strings.Join(inc.Reasons, "; ")})
+			}
+		}
+	}
+	return items
+}
+
+func handleFlaggedPaths(w http.ResponseWriter, r *http.Request) {
+	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{
+		InPath:   filepath.Join(logsDir, "edr_events.jsonl"),
+		LogsDir:  logsDir,
+		EnableAI: false,
+	})
+	if err != nil {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode([]string{})
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(collectFlaggedFromIncidents(res.Incidents))
 }
 
 type flaggedItem struct {
@@ -1018,6 +1124,46 @@ func handleLabTimeline(w http.ResponseWriter, r *http.Request) {
 	_ = json.NewEncoder(w).Encode(items)
 }
 
+func handleLabGenerate(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "POST only", 405)
+		return
+	}
+	scenario := strings.TrimSpace(r.FormValue("scenario"))
+	if scenario == "" {
+		scenario = "mixed"
+	}
+	count := 30
+	if c := strings.TrimSpace(r.FormValue("count")); c != "" {
+		if n, err := strconv.Atoi(c); err == nil {
+			count = n
+		}
+	}
+	if count < 1 {
+		count = 30
+	}
+	if count > 500 {
+		count = 500
+	}
+	events := simulate.GenerateEvents(scenario, count)
+	outPath := filepath.Join(logsDir, "edr_events.jsonl")
+	if err := simulate.WriteJSONL(outPath, events); err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Write([]byte(fmt.Sprintf("Lab: generated %d events (%s) -> %s", len(events), scenario, outPath)))
+}
+
+func handleLabAnalyze(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "POST only", 405)
+		return
+	}
+	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{
+		InPath:  filepath.Join(logsDir, "edr_events.jsonl"),
+		LogsDir: logsDir,
+	})
 type driverItem struct {
 	DeviceName string `json:"deviceName"`
 	Provider   string `json:"provider"`
@@ -1107,6 +1253,47 @@ func handleDriverAIApply(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Write([]byte(res.Log.String()))
+}
+
+func handleLabTimeline(w http.ResponseWriter, r *http.Request) {
+	res, err := runner.RunAnalyze(r.Context(), runner.AnalyzeOpts{
+		InPath:  filepath.Join(logsDir, "edr_events.jsonl"),
+		LogsDir: logsDir,
+	})
+	if err != nil {
+		if os.IsNotExist(err) {
+			w.Header().Set("Content-Type", "application/json")
+			_ = json.NewEncoder(w).Encode([]interface{}{})
+			return
+		}
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	type timelineItem struct {
+		ID       string   `json:"id"`
+		Start    string   `json:"start"`
+		End      string   `json:"end"`
+		Score    int      `json:"score"`
+		Severity string   `json:"severity"`
+		Reasons  []string `json:"reasons"`
+	}
+	items := make([]timelineItem, 0, len(res.Incidents))
+	for _, inc := range res.Incidents {
+		items = append(items, timelineItem{ID: inc.ID, Start: inc.Start.Format(time.RFC3339), End: inc.End.Format(time.RFC3339), Score: inc.Score, Severity: inc.Severity, Reasons: inc.Reasons})
+	}
+	w.Header().Set("Content-Type", "application/json")
+	_ = json.NewEncoder(w).Encode(items)
+}
+
+type driverItem struct {
+	DeviceName string `json:"deviceName"`
+	Provider   string `json:"provider"`
+	Version    string `json:"version"`
+	Date       string `json:"date"`
+	Inf        string `json:"inf"`
+	DeviceID   string `json:"deviceId"`
+	Problem    bool   `json:"problem"`
 	w.Write([]byte("AI plan confirmed. Interactive driver flow launched in separate terminal."))
 }
 
@@ -1863,6 +2050,59 @@ Return strict JSON only: {"command":"driver-auto|driver-install|none","reason":"
 	json.NewEncoder(w).Encode(pl)
 }
 
+}
+
+type driverAIPlan struct {
+	Command    string `json:"command"`
+	Reason     string `json:"reason"`
+	TargetHint string `json:"target_hint"`
+	Confidence int    `json:"confidence"`
+}
+
+func handleDriverReport(w http.ResponseWriter, r *http.Request) {
+	rep := collectDriverReport()
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(rep)
+}
+
+func handleDriverAIPlan(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "POST only", 405)
+		return
+	}
+	issue := strings.TrimSpace(r.FormValue("issue"))
+	if issue == "" {
+		http.Error(w, "missing issue", 400)
+		return
+	}
+	key := scanner.LoadOpenAIKey(logsDir)
+	if key == "" {
+		http.Error(w, "OpenAI key not set", 400)
+		return
+	}
+	rep := collectDriverReport()
+	ctx := r.Context()
+	prompt := fmt.Sprintf(`User issue: %s
+Problematic drivers: %v
+Downloaded driver folders: %v
+Return strict JSON only: {"command":"driver-auto|driver-install|none","reason":"...","target_hint":"...","confidence":0-100}`,
+		issue, rep.Problematic, rep.Downloaded)
+	txt, err := aia.NewClient(key, "gpt-5-nano").Explain(ctx, prompt)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+	pl := driverAIPlan{Command: "none", Reason: txt, Confidence: 30}
+	if b := extractJSON(txt); b != "" {
+		_ = json.Unmarshal([]byte(b), &pl)
+	}
+	if pl.Command != "driver-auto" && pl.Command != "driver-install" {
+		pl.Command = "none"
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(pl)
+}
+
 async function refreshDriverReport(){
   try{
     const r=await fetch('/api/driver-report');
@@ -1935,6 +2175,53 @@ func handleDriverAIApply(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.Write([]byte("AI plan confirmed. Interactive driver flow launched in separate terminal."))
+}
+
+func collectDriverReport() driverReport {
+	rep := driverReport{Installed: []driverItem{}, Problematic: []driverItem{}, Downloaded: []downloadedDriver{}}
+	if runtime.GOOS == "windows" {
+		ps := `$drv = Get-CimInstance Win32_PnPSignedDriver | Select-Object FriendlyName, DriverProviderName, DriverVersion, DriverDate, InfName, DeviceID, IsSigned; $dev=Get-CimInstance Win32_PnPEntity | Select-Object Name,PNPDeviceID,ConfigManagerErrorCode; $res=@(); foreach($d in $drv){$err=($dev|Where-Object{$_.PNPDeviceID -eq $d.DeviceID}|Select-Object -First 1).ConfigManagerErrorCode; $prob=($err -ne $null -and [int]$err -ne 0) -or ($d.IsSigned -ne $true); $res += [PSCustomObject]@{deviceName=$d.FriendlyName;provider=$d.DriverProviderName;version=$d.DriverVersion;date=$d.DriverDate;inf=$d.InfName;deviceId=$d.DeviceID;problem=$prob}}; $res|ConvertTo-Json -Depth 4`
+		out, err := exec.Command("powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps).CombinedOutput()
+		if err == nil {
+			body := strings.TrimSpace(string(out))
+			if strings.HasPrefix(body, "[") {
+				_ = json.Unmarshal([]byte(body), &rep.Installed)
+			} else if strings.HasPrefix(body, "{") {
+				var one driverItem
+				if json.Unmarshal([]byte(body), &one) == nil {
+					rep.Installed = append(rep.Installed, one)
+				}
+			}
+			for _, it := range rep.Installed {
+				if it.Problem {
+					rep.Problematic = append(rep.Problematic, it)
+				}
+			}
+		}
+	}
+	entries, _ := os.ReadDir(logsDir)
+	for _, e := range entries {
+		if !e.IsDir() || !strings.HasPrefix(e.Name(), "driver_auto_") {
+			continue
+		}
+		d := filepath.Join(logsDir, e.Name())
+		pb, _ := os.ReadFile(filepath.Join(d, "provenance.txt"))
+		ib, _ := os.ReadFile(filepath.Join(d, "install.log"))
+		rep.Downloaded = append(rep.Downloaded, downloadedDriver{Folder: e.Name(), Provenance: trimStr(string(pb), 600), InstallLog: trimStr(string(ib), 600)})
+	}
+	return rep
+}
+
+func trimStr(s string, max int) string {
+	if max <= 0 {
+		return ""
+	}
+	if len(s) <= max {
+		return s
+	}
+	return s[:max] + "..."
+}
+
 }
 
 func collectDriverReport() driverReport {
