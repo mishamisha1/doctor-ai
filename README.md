@@ -33,7 +33,6 @@
 | **Analyze** | Корреляция цепочек и риск-оценка, опционально AI-объяснения |
 | **Smart Scan** | Локальный эвристический скан подозрительных файлов |
 | **Knight Mode** | Проактивная защита: эвристика + AI verdict + авто-реакция + enforcement по путям из EDR корреляции |
-| **Knight Preview** | Превью действий до применения: что будет остановлено/карантинено |
 | **Update / Drivers** | Update, driver-install/driver-auto, AI Driver Assistant |
 | **VT + Hashlist** | Репутация хэшей, авто-кэширование в whitelist/blacklist |
 | **Self-test** | `simulate-edr` для безопасной проверки детекта без malware |
@@ -57,6 +56,64 @@
 ### API-ключи (опционально)
 - **OpenAI**: для Analyze AI, Knight Mode AI verdict, AI Driver Assistant.
 - **VirusTotal**: для проверки хэшей во вкладке Quarantine.
+
+---
+
+## Быстрый старт (рекомендуемый сценарий)
+
+### Один exe
+1. Собери/возьми `doctor-gui.exe`.
+2. Запусти **от имени администратора**.
+3. В Settings укажи OpenAI и VT ключи (если нужны).
+
+### Рекомендуемый порядок для полноценного детекта
+1. **Start Agent** (сбор EDR в фоне, при этом Sysmon устанавливается/обновляется обязательно).
+2. Подожди накопление событий / запусти Scan.
+3. **Analyze AI** (корреляция + объяснения).
+4. **Knight Mode** (проактивная реакция на подозрительные объекты).
+
+> Если агент не запущен, детект возможен, но качество корреляции ниже (меньше EDR-контекста).
+
+---
+
+
+## Portable / 1 exe и перенос на другой ПК
+
+- `doctor-gui.exe` можно переносить на флешке и запускать на другом Windows ПК.
+- При первом запуске приложение создаёт рабочие пути: `configs/`, `logs/`, `quarantine/`, `db/sysmon/`, `db/tools/sysmon/`.
+- Приложение восстанавливает встроенные конфиги и `sysmonconfig.xml`, а также подтягивает `Sysmon64.exe` в `db/tools/sysmon/` (если отсутствует); запуск Agent завершится ошибкой, если обязательная установка Sysmon не удалась.
+- Для полного функционала рекомендован запуск **от администратора**.
+
+---
+
+## Как уменьшить риск детекта EXE как suspicious
+
+Важно: "встроить сертификат легитимности" без внешнего доверенного УЦ нельзя.
+
+Рекомендуется для релиза:
+1. Подписывать build через **OV/EV Code Signing certificate** (лучше EV).
+2. Стабилизировать publisher identity (один cert, одинаковый product name/version).
+3. Делать reproducible release pipeline и публиковать checksums (SHA256).
+4. Отправлять релиз на Microsoft Defender / SmartScreen reputation buildup (постепенно).
+
+Самоподписанный сертификат подходит только для внутренних стендов и не даёт нормальной репутации SmartScreen.
+
+---
+
+## Публикация в GitHub (ваш репозиторий)
+
+```powershell
+# 1) добавить ваш remote
+ git remote add myrepo https://github.com/<your_user>/<your_repo>.git
+
+# 2) проверить текущую ветку
+ git branch --show-current
+
+# 3) отправить изменения
+ git push -u myrepo <branch_name>
+```
+
+Если включена 2FA, используйте GitHub PAT/token или GitHub CLI auth.
 
 ---
 
@@ -144,54 +201,6 @@ go build -o analyze.exe  ./cmd/analyze
 # GUI single exe
 go build -o doctor-gui.exe ./cmd/gui
 ```
-
-Альтернатива (PowerShell, проверка merge-маркеров + сборка всего):
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\build_all.ps1
-```
-
-Скрипт валит сборку при любой ошибке `go build` (включая `internal/scanner`), чтобы не было ложного сообщения "Build complete".
-
-### Smoke-проверка GUI (локально)
-
-```bash
-# 1) собрать GUI
-go build -o dist/doctor-gui ./cmd/gui
-
-# 2) прогнать базовую проверку вкладок/API и логирования агента
-bash scripts/gui_smoke.sh
-
-# 3) убедиться, что в репозитории нет неразрешённых merge-маркеров
-bash scripts/check_merge_markers.sh
-```
-
-### Если GitHub пишет `This branch has conflicts` (какую кнопку нажимать)
-
-Для конфликтов в файлах:
-- `README.md`
-- `cmd/gui/main.go`
-- `internal/scanner/protect.go`
-- `internal/scanner/protect_stub.go`
-- `internal/scanner/protect_test.go`
-- `scripts/gui_smoke.sh`
-
-рекомендуемый порядок:
-
-1. Нажимайте **`Resolve conflicts`**.
-2. Для каждого блока сначала жмите **`Accept both changes`** (чтобы ничего не потерять).
-3. Сразу после этого вручную удаляйте маркеры `<<<<<<<`, `=======`, `>>>>>>>` и дубликаты строк.
-4. Для спорных мест оставляйте более безопасные/новые варианты:
-   - в `protect.go`: строгий `parseAIVerdictToken` (без `Contains("allow")`);
-   - в `protect_stub.go`: возврат ошибки на non-Windows (не no-op success);
-   - в `protect_test.go`: проверку `failed` на non-Windows и strict parser tests;
-   - в `scripts/gui_smoke.sh`: retry + readiness check.
-5. После ручного резолва нажмите **`Mark as resolved`**, затем **`Commit merge`**.
-6. Локально/в CI обязательно прогоните:
-   - `bash scripts/check_merge_markers.sh`
-   - `go test ./...`
-   - `go build -o doctor-gui.exe ./cmd/gui`
-   - `bash scripts/gui_smoke.sh`
 
 ---
 
