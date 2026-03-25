@@ -164,6 +164,33 @@ bash scripts/gui_smoke.sh
 bash scripts/check_merge_markers.sh
 ```
 
+### Если GitHub пишет `This branch has conflicts` (какую кнопку нажимать)
+
+Для конфликтов в файлах:
+- `README.md`
+- `cmd/gui/main.go`
+- `internal/scanner/protect.go`
+- `internal/scanner/protect_stub.go`
+- `internal/scanner/protect_test.go`
+- `scripts/gui_smoke.sh`
+
+рекомендуемый порядок:
+
+1. Нажимайте **`Resolve conflicts`**.
+2. Для каждого блока сначала жмите **`Accept both changes`** (чтобы ничего не потерять).
+3. Сразу после этого вручную удаляйте маркеры `<<<<<<<`, `=======`, `>>>>>>>` и дубликаты строк.
+4. Для спорных мест оставляйте более безопасные/новые варианты:
+   - в `protect.go`: строгий `parseAIVerdictToken` (без `Contains("allow")`);
+   - в `protect_stub.go`: возврат ошибки на non-Windows (не no-op success);
+   - в `protect_test.go`: проверку `failed` на non-Windows и strict parser tests;
+   - в `scripts/gui_smoke.sh`: retry + readiness check.
+5. После ручного резолва нажмите **`Mark as resolved`**, затем **`Commit merge`**.
+6. Локально/в CI обязательно прогоните:
+   - `bash scripts/check_merge_markers.sh`
+   - `go test ./...`
+   - `go build -o doctor-gui.exe ./cmd/gui`
+   - `bash scripts/gui_smoke.sh`
+
 ---
 
 ## CLI команды
